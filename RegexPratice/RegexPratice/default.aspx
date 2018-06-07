@@ -18,9 +18,9 @@
     	<p>
 
 			<asp:TextBox ID="TextBox2" runat="server" ValidationGroup="email"></asp:TextBox>
-			<asp:Button ID="Button2" runat="server" Text="Checking Email Button2" OnClick="Button2_Click" ValidationGroup="email" />
+			<asp:Button ID="Button2" runat="server" Text="Button2 (webControl)" OnClick="Button2_Click" ValidationGroup="email" />
 
-			<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Incorrect!" ControlToValidate="TextBox02 webcontrol" EnableClientScript="False" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="email"></asp:RegularExpressionValidator>
+			<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Incorrect!" ControlToValidate="TextBox2" EnableClientScript="False" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="email"></asp:RegularExpressionValidator>
         </p>
     </form>
 </body>

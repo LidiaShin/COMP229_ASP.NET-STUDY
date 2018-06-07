@@ -12,7 +12,7 @@ namespace RegexPratice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1.Text = "Checking Email Button 1";
+            Button1.Text = "Button 1(Server Control)";
         }
 
        
