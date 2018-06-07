@@ -12,7 +12,7 @@ namespace RegexPratice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1.Text = "Checking Email";
+            Button1.Text = "Checking Email Button 1";
         }
 
        
@@ -21,6 +21,7 @@ namespace RegexPratice
 
 
             string input = TextBox1.Text;
+
 
 
             if (Regex.IsMatch(input, "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$"))
@@ -32,6 +33,11 @@ namespace RegexPratice
             {
                 Label1.Text = "incorrect";
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

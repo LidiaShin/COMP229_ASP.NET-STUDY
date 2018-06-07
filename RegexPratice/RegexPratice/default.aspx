@@ -12,7 +12,16 @@
 			<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 			<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" />
         	<asp:Label ID="Label1" runat="server"></asp:Label>
+
+
         </div>
+    	<p>
+
+			<asp:TextBox ID="TextBox2" runat="server" ValidationGroup="email"></asp:TextBox>
+			<asp:Button ID="Button2" runat="server" Text="Checking Email Button2" OnClick="Button2_Click" ValidationGroup="email" />
+
+			<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Incorrect!" ControlToValidate="TextBox2" EnableClientScript="False" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="email"></asp:RegularExpressionValidator>
+        </p>
     </form>
 </body>
 </html>
