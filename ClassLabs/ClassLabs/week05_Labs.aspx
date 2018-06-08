@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="ClassLabs._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="week05_Labs.aspx.cs" Inherits="ClassLabs._default" %>
 
 <!DOCTYPE html>
 <script language="C#" runat="server">

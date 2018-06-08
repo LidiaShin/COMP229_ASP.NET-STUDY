@@ -4,7 +4,7 @@
 body {
 	font-family:Verdana;
 	background-color:aliceblue;
-	color:cadetblue;
+	
 }
 
 h3 {
@@ -14,4 +14,11 @@ h3 {
 #confirm {
 	border-radius:10px;
 	width:200px;
+}
+
+#date {
+	font-family:FangSong;
+	color:darkolivegreen;
+	font-size:20px;
+	background-color:antiquewhite;
 }
