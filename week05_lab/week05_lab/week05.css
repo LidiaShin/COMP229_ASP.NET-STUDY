@@ -1,0 +1,17 @@
+﻿
+
+
+body {
+	font-family:Verdana;
+	background-color:aliceblue;
+	color:cadetblue;
+}
+
+h3 {
+	color:darkblue;
+}
+
+#confirm {
+	border-radius:10px;
+	width:200px;
+}

@@ -22,6 +22,15 @@ namespace week05_lab {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// hello control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hello;
+        
+        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>

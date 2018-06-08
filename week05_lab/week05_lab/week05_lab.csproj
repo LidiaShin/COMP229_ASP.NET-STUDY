@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="default.aspx" />
     <Content Include="Web.config" />
+    <Content Include="week05.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
