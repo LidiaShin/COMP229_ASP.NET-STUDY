@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace week05_lab {
+namespace ClassLabs {
     
     
     public partial class _default {
