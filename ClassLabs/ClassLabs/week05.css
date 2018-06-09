@@ -2,7 +2,7 @@
 
 
 body {
-	font-family:Verdana;
+	font-family:DengXian;
 	background-color:aliceblue;
 	
 }
@@ -17,8 +17,21 @@ h3 {
 }
 
 #date {
-	font-family:FangSong;
+	font-family:Britannic;
 	color:darkolivegreen;
 	font-size:20px;
 	background-color:antiquewhite;
 }
+
+.button{
+	color:indigo;
+	border-radius:5px;
+	background-color:azure;
+}
+
+.result {
+	color:darkblue;
+	font-family:Constantia;
+
+}
+

@@ -2,27 +2,19 @@
 
 <!DOCTYPE html>
 <script language="C#" runat="server">
-
 	void Click(object o, EventArgs e)
-	{
-
-		string input = first.Text;
-
-
-
+	{	string input = first.Text;
 		if (Regex.IsMatch(input,"^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$"))
-		{
-			result1.Text = "correct";
+		{result1.Text = "correct";
 		}
 
 		else
-		{
-			result1.Text = "incorrect";
+		{result1.Text = "Incorrect";
 		}
-
 	}
+</script>
 
-	</script>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -34,16 +26,16 @@
 			<span id="date"> 4 June 2018 </span><hr />
 			
 			<h3> Regex Email Practice   </h3>
-			   ★ first Method <br />
+			★ first <br />
 			Email : <asp:TextBox ID="first" runat="server"></asp:TextBox>
-			<input type="submit" runat="server" OnServerClick="Click" />
-			<asp:Label ID="result1" runat="server"></asp:Label><br />
+			<input type="submit" class="button" runat="server" value="firstCheck" OnServerClick="Click" />
+			<asp:Label ID="result1" runat="server" CssClass="result"></asp:Label><br />
 
 			<p></p>
-			 ★ second Method <br />
+			 ★ second <br />
 			Email: <asp:TextBox ID="second" runat="server" ValidationGroup="second"></asp:TextBox>
-			<asp:Button ID="Button1" runat="server" Text="secondCheck" ValidationGroup="second" OnClick="Button1_Click" />
-			<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Wrong" ControlToValidate="second" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="second"></asp:RegularExpressionValidator>
+			<asp:Button ID="Button2" runat="server" Text="secondCheck" ValidationGroup="second" OnClick="Button1_Click" CssClass="button" />
+			<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Incorrect" ControlToValidate="second" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="second" CssClass="result"></asp:RegularExpressionValidator>
 
         </div>
     </form>
