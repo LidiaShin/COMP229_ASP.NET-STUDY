@@ -65,7 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BulletList.aspx" />
-    <Content Include="BulletList.css" />
+    <Content Include="Practice.css" />
+    <Content Include="Calendar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +76,13 @@
     </Compile>
     <Compile Include="BulletList.aspx.designer.cs">
       <DependentUpon>BulletList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

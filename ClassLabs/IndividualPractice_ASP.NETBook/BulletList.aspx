@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" runat="server"%>
-<script language="C#" runat="server">
+<script runat="server">
 	void CHECK(object sender, BulletedListEventArgs e)
 	{
 		Response.Write("You chose the list of : " + e.Index.ToString()
