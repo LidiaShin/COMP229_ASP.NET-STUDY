@@ -32,6 +32,8 @@
 			<asp:Label ID="result1" runat="server" CssClass="result"></asp:Label><br />
 
 			<p></p>
+
+
 			 ★ second <br />
 			Email: <asp:TextBox ID="second" runat="server" ValidationGroup="second"></asp:TextBox>
 			<asp:Button ID="Button2" runat="server" Text="secondCheck" ValidationGroup="second" OnClick="Button1_Click" CssClass="button" />

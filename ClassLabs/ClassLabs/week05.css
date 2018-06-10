@@ -35,3 +35,12 @@ h3 {
 
 }
 
+#colored {
+	color: #e6eaec;
+	background-color: #0e2f44;
+	border-radius:5px;
+	font-size:14px;
+	padding:3px;
+	margin:3px;
+}
+

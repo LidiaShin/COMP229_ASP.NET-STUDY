@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="week05_Labs.aspx.cs" Inherits="ClassLabs._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebServerControl.aspx.cs" Inherits="ClassLabs._default" %>
 
 <!DOCTYPE html>
 <script language="C#" runat="server">
@@ -10,21 +10,25 @@
 	} // When page load, the welcome text will appear automatically
 	void Click(object o, EventArgs e)
 	{
-	  // when button with ID Click is clicked, the event below will happen
+		// when button with ID Click is clicked, the event below will be triggered
+		string n = Convert.ToString(name.Value);
 
-		result.Text = "Welcome! " + name.Value + "<br>";
-		result.Text += "Your email is " + email.Value + "<br>";
+		result.Text = "Welcome! <span id=\"colored\">"+name.Value + "</span><br>";
+		// when you change property of CSS and test it with Chrome, make sure clear browsing data before running test!
+
+		result.Text += "Your email is <span id=\"colored\">" + email.Value + "</span><br>";
 		result.Text += "Your favorite sweet is <br>" ;
+
 		// label with ID
 		for(int i=0;i<=dessert.Items.Count-1;i++){
 			if (dessert.Items[i].Selected)
 			{
-				result.Text += " ★ " + dessert.Items[i].Text + "<br>";
+				result.Text += " <span id=\"colored\"> ★ " + dessert.Items[i].Text + "</span><br>";
 			}
 		}
 
 
-		result.Text += "You like studying coding" + coding.Value;
+		result.Text += "You like studying coding <span id=\"colored\">" + coding.Value + "</span>";
 	}
 
 	</script>
@@ -43,7 +47,7 @@
         <div id="banner">
 			<a runat="server" href="https://codepen.io/dashboard/">Visit My Gallery</a> 
 
-			<h3>This is ASP.NET Class week5's Lab</h3>
+			<h3>This is ASP.NET Class week5's Lab (WEB SERVER CONTROL) </h3>
 
 
 		   <asp:Label ID="hello" runat="server"></asp:Label>
