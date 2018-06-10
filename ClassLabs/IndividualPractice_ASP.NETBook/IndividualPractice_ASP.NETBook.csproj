@@ -64,9 +64,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BulletList.aspx" />
+    <Content Include="BulletList.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BulletList.aspx.cs">
+      <DependentUpon>BulletList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BulletList.aspx.designer.cs">
+      <DependentUpon>BulletList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
