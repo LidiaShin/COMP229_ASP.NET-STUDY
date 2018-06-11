@@ -68,11 +68,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="profile_wanwan.jpg" />
+    <Content Include="profile_wanwan_angry.jpg" />
+    <Content Include="TTC_mar2018.JPG" />
     <Content Include="week05_HTML_SeverContorl.aspx" />
     <Content Include="WebServerControl.aspx" />
     <Content Include="Web.config" />
     <Content Include="week05.css" />
     <Content Include="week05_Labs_Regex.aspx" />
+    <Content Include="week06_lab.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="week05_HTML_SeverContorl.aspx.cs">
@@ -96,6 +100,13 @@
     </Compile>
     <Compile Include="week05_Labs_Regex.aspx.designer.cs">
       <DependentUpon>week05_Labs_Regex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week06_lab.aspx.cs">
+      <DependentUpon>week06_lab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week06_lab.aspx.designer.cs">
+      <DependentUpon>week06_lab.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

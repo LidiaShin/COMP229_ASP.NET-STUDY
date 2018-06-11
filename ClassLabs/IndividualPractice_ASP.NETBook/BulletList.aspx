@@ -14,6 +14,7 @@
 <head runat="server">
     <title></title>
 	<link href="BulletList.css" rel="stylesheet" type="text/css" />
+	<link href="Practice.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
