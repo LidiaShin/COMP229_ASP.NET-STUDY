@@ -4,8 +4,7 @@
 <script runat="server">
 	void checkCalendar(object sender, EventArgs e)
 	{
-		result.Text="Your date is : " + Calendar1.SelectedDate.ToShortDateString();
-	
+		result.Text="Your date is :<span id=\"colored\">" + Calendar1.SelectedDate.ToShortDateString() + "</span>";
 	}
 
 
@@ -19,7 +18,7 @@
     <form id="form1" runat="server">
         <div id="para" >
 
-			<asp:Label ID="result" runat="server" Text="Here"></asp:Label>
+			<asp:Label ID="result" runat="server" Text="  "></asp:Label>
 			</div>
 		<p></p>
 			<asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="checkCalendar" SelectionMode="Day" ></asp:Calendar>
