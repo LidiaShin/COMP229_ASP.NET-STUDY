@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="BulletList.aspx" />
     <Content Include="CheckBoxListControl.aspx" />
+    <Content Include="DropDownList.aspx" />
     <Content Include="Practice.css" />
     <Content Include="Calendar.aspx" />
     <Content Include="Web.config" />
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="CheckBoxListControl.aspx.designer.cs">
       <DependentUpon>CheckBoxListControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DropDownList.aspx.cs">
+      <DependentUpon>DropDownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DropDownList.aspx.designer.cs">
+      <DependentUpon>DropDownList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
