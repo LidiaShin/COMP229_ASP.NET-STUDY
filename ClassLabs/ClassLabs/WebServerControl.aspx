@@ -73,10 +73,10 @@
 			</select>
 				</p>
 			<p>
-				<button id="confirm" OnServerClick="Click" runat="server">
-					Confirm!!
-				</button>
+				<asp:Button ID="confirm" OnClick="Click" runat="server" Text="CHECK" />
+					
 			</p>
+			
 
 			<p>
 				<asp:Label ID="result" runat="server"></asp:Label>
