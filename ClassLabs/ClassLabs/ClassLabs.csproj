@@ -74,9 +74,10 @@
     <Content Include="week05_HTML_SeverContorl.aspx" />
     <Content Include="WebServerControl.aspx" />
     <Content Include="Web.config" />
-    <Content Include="week05.css" />
+    <Content Include="StyleForClassLab.css" />
     <Content Include="week05_Labs_Regex.aspx" />
     <Content Include="week06_lab.aspx" />
+    <Content Include="week06_lab2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="week05_HTML_SeverContorl.aspx.cs">
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="week06_lab.aspx.designer.cs">
       <DependentUpon>week06_lab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week06_lab2.aspx.cs">
+      <DependentUpon>week06_lab2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week06_lab2.aspx.designer.cs">
+      <DependentUpon>week06_lab2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
