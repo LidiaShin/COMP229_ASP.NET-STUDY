@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+
+  <siteMapNode title="week05_HTML" url="~/week05_HTML_SeverContorl.aspx"
+  description="Home">
+    <siteMapNode title="week05" url="~/week05_Labs_Regex.aspx"
+    description="TreeView Example" />
+    <siteMapNode title="week06" url="~/week06_lab.aspx"
+    description="TreeView Example" />
+    <siteMapNode title="week07" url="~/week7_labs.aspx"
+    description="ClickEvent Example" />
+  
+  </siteMapNode>
+
+
+
+
+
+
+</siteMap>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>profile_wanwan_angry.jpg</ImageUrl>
+    <NavigateUrl>http://www.naver.com</NavigateUrl>
+    <TargetUrl>_blank</TargetUrl>
+    <AlternateText>Naver</AlternateText>
+    <Keyword>Navering</Keyword>
+    <Impressions>2</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>profile_wanwan2.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <TargetUrl>_blank</TargetUrl>
+    <AlternateText>WanWan</AlternateText>
+    <Keyword>Taiwan</Keyword>
+    <Impressions>1</Impressions>
+  </Ad>
+</Advertisements>
+

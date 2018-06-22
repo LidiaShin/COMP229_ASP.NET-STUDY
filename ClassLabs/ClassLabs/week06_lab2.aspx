@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <script runat="server">
 
+public void Page_Load()
+{
+HtmlButton myButton = new HtmlButton();
+myButton.InnerText = "플레이스홀더 테스트버튼";
+myPlaceHolder.Controls.Add(myButton);
+}
+ // aspx 페이지에 페이지로드 있음 중복되서 (aspx 페이지가 우선순위) 실행안댐 
+
+
 	public void HidePanel(Object s, EventArgs e)
 	{
 		if (myPanel.Visible)
@@ -51,7 +60,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>week06_placeholder</title>
-	<link href="week05.css" rel="stylesheet" type="text/css" />
+	
 	<link href="StyleForClassLab.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -78,7 +87,7 @@
         <asp:ListItem Text="Red" Value="red" />
         <asp:ListItem Text="Blue" Value="blue" />
         <asp:ListItem Text="Green" Value="green" />
-			 <asp:ListItem Text="skyblue" Value="skyblue" />
+	   <asp:ListItem Text="skyblue" Value="skyblue" />
         <asp:ListItem Text="brown" Value="brown" />
         <asp:ListItem Text="white" Value="white" />
         </asp:ListBox>

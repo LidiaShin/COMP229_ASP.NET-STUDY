@@ -9,6 +9,23 @@ h3 {
 	font-family:Candara;
 }
 
+
+input[type="submit"] {
+	color:lightcoral;
+	border-radius:5px;
+	font-family:Constantia;
+	background-color:whitesmoke;
+	width:100px;
+	height:30px;
+}
+
+
+{
+	border-radius:5px;
+	background-color:lavenderblush;
+	color:orchid;
+	font-family: Elephant;
+}
 #Calendar1 {
 	background-color: linen;
 }
@@ -35,11 +52,7 @@ h3 {
 	margin: 3px;
 }
 
-Button {
-	color: indigo;
-	border-radius: 5px;
-	background-color: azure;
-}
+
 #result {
 	line-height:200%;
 }

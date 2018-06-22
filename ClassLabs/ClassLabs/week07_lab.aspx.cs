@@ -7,8 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace ClassLabs
 {
-    public partial class week6_placeholder : System.Web.UI.Page
+    public partial class week07_lab : System.Web.UI.Page
     {
-        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
