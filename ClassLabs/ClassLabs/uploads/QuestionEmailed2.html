@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>parameter test</title>
+</head>
+<body>
+Test Box: <input type="number" id ="number">  	
+<br>
+<button id="btn"> Try!!! </button> 
+<p id ="result">  </p>
+
+
+<script>
+		
+var mybutton = document.getElementById("btn");
+var num = document.getElementById ("number");
+
+var m = Number(num.value);
+console.log(m);
+
+//mybutton.addEventListener("click",plus100.bind(this,888),false); // OK
+
+//mybutton.addEventListener("click",function(){plus100(888)},false); // OK
+
+//mybutton.addEventListener("click",function(){plus100(Number(num.value))},false); // OK
+//mybutton.addEventListener("click",function(){plus100(Number(number.value))},false); // OK
+//mybutton.addEventListener("click",function(){plus100(parseInt(number.value))},false); // OK
+
+//mybutton.addEventListener("click",function(){plus100(parseInt(m))},false); // ERROR!!!!!
+
+
+
+function plus100(a)
+{
+
+//document.write("<br>");
+return a+100;
+
+
+document.getElementById("result").innerHTML=a+100;
+
+//var m = Number(num.value);
+//console.log(m);
+
+}
+
+//document.write(plus100(77));
+</script>
+</body>
+</html>

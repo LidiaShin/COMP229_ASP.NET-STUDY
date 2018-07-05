@@ -1,0 +1,280 @@
+<html>
+<head>
+<title>
+* * CHAPTER 2 * *
+</title>
+</head>
+<body>
+
+
+1. What is a method?
+
+- JavaScript methods are the actions that can be performed on objects.
+  It is a property containing a function definition.
+  
+- It is procedures associate with an object, 
+
+- objectName.methodName()
+
+
+
+2. What is a function?
+
+- A JavaScript function is a block of code designed to perform a particular task.
+
+- A JavaScript function is executed when "something" invokes it (calls it).
+
+- Must be contained within a script element
+
+- function myFunction(p1, p2) {
+    return p1 * p2;              // The function returns the product of p1 and p2
+    }
+	
+	
+	
+3. What is an anonymous function?
+
+- It works only where they are located in code, 
+- You can use it for code that runs only once
+
+
+4. What are parameter and argument?
+
+- Parameter is a variable used within a function. 
+- They are listed inside the parentheses() in the function definition. 
+
+
+- Arguments are actual parameters. They are variables places in the function call statement parentheses. 
+  함수 호출할때 아규먼트라고 한다!!!! 함수(파라메터)  ← 호출할 때 파라메터를 아규먼트라고 한다.
+- f(x) x는 7   x는 파라메터, 7은 아규먼트라고
+
+- Argument value assigned to the corresponding parameter value in the function definition. 
+
+ 
+- They are values received by the function when it is invoked. 
+
+- Inside the function, the arguments (the parameters) behave as local variables!!!!!!
+
+
+5. How to call functions?
+
+- To execute a named function, you must invoke, or call it. 
+
+- You can use 'Event Handler' to call functions
+
+// slide 10 
+
+//1) Specify function as value for HTML attribute (onEVENT)
+<input type="submit" onclick="showMessage()" >
+
+<input type ="submit"> // 서브밋 Submit 버튼이 생긴다
+<input type="number"> // 숫자 입력창이 생긴다 
+<input type="text"> // 텍스트 입력창이 생긴다 
+<button id="submit"> submit </button> // 서브밋 submit 버튼이 생긴다
+
+<script>
+
+//2) Specify function as property value for object
+document.getElementById("submitButton").onclick =showMessage;
+
+
+
+//3) Use addEventListener() method
+var a = document.getElementById("submitButton");
+a.addEventListener("click", showMessage, false);
+
+// This is most flexible - separate HTML and JavaScript code, enables you to specify several event handler for a single event. 
+
+</script>
+
+6. How can you find error location with browser?
+- Since unintentional coding mistakes keep code from working, you need to find where they are. You can find them in browser console pane
+- CHROME: CTRL + SHIT + J (or F12)
+
+7. What is return statement?
+
+- We can return <function value> to a calling statement
+= Return statement returns  a value to the statement (which is ) calling the function (같은말) 
+
+
+8. What is the difference between local scope and global scope?
+
+- Variable scope is the place (or range) where variable can be used.
+
+- Global variable is declared outside a function and it is available (affects) to all parts of code
+
+- Local variable is declared inside a function, so only available within the function where it is declared.
+So, when the function ends, the scope cease to exit. 
+- Keyword var is required !!!! If var is not included, the variable automatically becomes a global variable!!! (very confused!!!)
+
+     
+// slide 17
+
+<script>
+document.write("<br>");
+
+
+
+var color = "blue";
+
+function slide17(){
+
+color="red";
+document.write(color);
+
+}
+
+console.log(color); //blue
+document.write(color); //blue
+
+document.write("<br>");
+slide17(); //red
+
+</script>
+
+
+// slide 18
+
+<script>
+
+document.write("<br>");
+document.write("*** with Var ***");
+document.write("<br>");
+
+var color = "green";
+
+function slide18withVar() {
+
+   var color = "purple";
+   document.write(color); 
+   
+}
+
+document.write(color); // green
+
+slide18withVar();// purple
+
+document.write(color) // green
+
+document.write("<br>");
+
+var color = "green";
+
+document.write(color);//green
+
+slide18withVar();//purple
+
+document.write(color); // purple
+
+document.write("<br>");
+
+document.write("<p>");
+
+
+
+
+
+document.write("*** without Var *** ");
+document.write("<br>");
+
+var color = "green";
+
+function slide18withoutVar() {
+
+   color = "purple";
+   document.write(color); 
+   
+}
+
+document.write(color); // green
+
+slide18withoutVar();// purple
+
+document.write(color) //purple
+
+document.write("<br>");
+
+var color = "red";
+
+document.write(color);//red
+
+slide18withoutVar();//purple
+
+document.write(color); // purple
+
+
+</script>
+
+
+9. Please list at least 3 built-in JavaScript function
+
+- parseInt(string) : convert string into integer
+- parseFloat(string) : convert string into floating point number
+- isNaN(number): determines whether a value is the special value NaN
+
+
+10. What is primitive types?
+
+* Javascript has five primitive data types
+
+- number
+- Booliean : true or false
+- string
+- undefined
+- null : empty value
+- Symbol (new in ECMAScript 6)
+
+Anything that doesn’t belong to any of these six primitive types is considered an object.
+BUT each of these five primitive data types has a corresponding object constructor
+
+READ : http://vicfriedman.github.io/blog/2013/09/15/the-difference-between-javascript-primitive-data-types-and-objects/
+
+Object refers to a data structure containing data and instructions for working with the data. 
+Objects sometimes refer to real-world things, for example a car or map object in a racing game. 
+JavaScript, Java, C++, Python, and Ruby are examples of object-oriented programming languages.
+
+
+11. What is null and undefined?
+
+- The value null represents the intentional absence of any object value.(= It doesn't contain any data)
+
+- Undefined variable never had a value, never been declared or assigned a value : not even null.
+
+12. What is escape characters and sequence?
+
+- Escape character is backslash(\) in Javascript. It tells the complier or interpreter that
+the character followed has a special purpose
+ex) \n : new line
+
+13. Arithmetic Operators
+
+14. What is the difference between binary operator and unary operator?
+- Binary operator requires an operand before and after operator. 
+ex) Arithmetic binary operators: +, -, *, /, %
+
+
+- Unary operator requires a single operand either before or after the operator. 
+ex) Increment unary operator: ++
+    Decrement unary operator: --
+	Postfix (i++) and prefix(++i), both increase the i variable by one but return different value. 
+	
+	<script>
+	
+	//slide 43
+	
+	var studentID = 100;
+	var curStudentID;
+	
+	curStudentID=++studentID; //101
+	document.write("<p> The first student ID is " + curStudentID + "</p>");
+	
+	curStudentID=++studentID; //102
+	document.write("<p> The second student ID is " + curStudentID + "</p>");
+	
+	curStudentID=++studentID; //103
+	document.write("<p> The third student ID is " + curStudentID + "</p>");
+	
+	</script>
+
+</body>
+</html>

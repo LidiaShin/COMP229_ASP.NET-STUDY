@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="week08_Mon_FrontPage.master.cs" Inherits="ClassLabs.week08_Mon_FrontPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+			<h1>Produce48 - All the best, Cheayeon Lee! </h1>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+			<p>Copyright 2018</p>
+
+        </div>
+    </form>
+</body>
+</html>

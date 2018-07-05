@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>
+슬라이드15
+</title>
+</head>
+<body>
+
+
+<button onclick = "calculatePay()"> Try it! </button>
+
+
+<script>
+
+function calculatePay() {
+   var payRate = 15; numHours = 40;
+   var grossPay = payRate * numHours;
+window.alert(grossPay);
+
+
+   var federalTaxes = grossPay * .06794;
+   var stateTaxes = grossPay * .0476;
+   var socialSecurity = grossPay * .062;
+   var medicare = grossPay * .0145;
+   
+   var netPay = grossPay - federalTaxes;
+ console.log("var netPay = grossPay - federalTaxes 넷페이 "  + netPay);
+ 
+   netPay *= stateTaxes;
+ console.log("netPay *= stateTaxes  넷페이 "  + netPay);
+ 
+   netPay *= socialSecurity;
+ console.log("netPay *= socialSecurity 넷페이 "  + netPay);
+ 
+ 
+   netPay *= medicare;
+ console.log("netPay *= medicare 넷페이 " + netPay);
+ 
+   //return netPay;
+   
+ window.alert(netPay);
+ console.log("넷페이 " + netPay);
+ console.log("그로스페이 : " + grossPay + " 페데럴택스 : " + federalTaxes + " 그로스페이 - 페데럴택스 " + (grossPay-federalTaxes));
+ 
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
