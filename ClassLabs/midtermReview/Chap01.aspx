@@ -20,6 +20,7 @@
 		</p>
 
         </div>
+		<asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator=" &gt;&gt;" RenderCurrentNodeAsLink="True" SkipLinkText="&quot;&quot;" BackColor="#FFFFCC"></asp:SiteMapPath>
     </form>
 </body>
 </html>

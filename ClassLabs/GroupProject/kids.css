@@ -1,0 +1,140 @@
+﻿#header {
+	
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Love Ya Like A Sister', cursive;
+	color: #383839;
+}
+
+
+
+#buttons {
+	text-align:right;
+	margin-right:200px;
+}
+
+.button {
+	color: lightcoral;
+	border-radius: 5px;
+	font-family: 'Cabin', sans-serif;
+	background-color: whitesmoke;
+	width: 120px;
+	height: 30px;
+}
+
+ul {
+	text-align: center;
+	list-style-type: none;
+}
+
+li a {
+	color: #84a5b4;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 20px;
+}
+
+li {
+	display: inline;
+	padding:2px;
+	column-width: 20px;
+}
+
+a {
+	text-decoration: none;
+	margin-left: 20px
+}
+
+li a:hover {
+	color: #1d2428; 
+}
+
+#mainSection {
+	width: 80%;
+	height: 300px;
+	bottom: 100px;
+	padding: 10px;
+	margin:auto;
+	border: 2px solid #777f7b;
+	
+}
+#footer {
+	font-family: 'Dosis', sans-serif;
+	background-color: #e5f2f2;
+	color: #004c4c;
+	text-align: right;
+	font-size: 16px;
+	border-radius:5px;
+	margin-top:10px;
+}
+
+
+
+
+
+
+
+
+
+.box {
+	display: inline-table;
+	position: relative;
+	vertical-align: top;
+	
+}
+
+
+
+.left {
+	width: 30%;
+	
+	padding: 20px;
+	border: 2px solid #777f7b;
+}
+
+.right {
+	
+	width: 40%;
+	
+	padding: 40px 0 0 20px;
+	text-align: left;
+	border: 2px solid #777f7b;
+}
+
+.wrapper {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.form-signin {
+	max-width: 380px;
+	padding: 15px 35px 45px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 30px;
+}
+
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	z-index: 2;
+}
+
+
+
+
+.uname{
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+pword{
+	margin-bottom: 20px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+

@@ -88,10 +88,10 @@ runat="server" ShowStartingNode="true" />
 DataSourceID="mySiteMapDataSource" />
 </div>
 
-		<hr />
+		<hr />898989
 
 <div>
-        <asp:SiteMapDataSource ID="SiteMapDataSource1"
+        <asp:SiteMapDataSource ID="mySiteMapDataSource1"
 runat="server" />
 <asp:SiteMapPath ID="mySiteMapPath" runat="server"
 DataSourceID="mySiteMapDataSource"

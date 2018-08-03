@@ -69,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ads.xml" />
+    <Content Include="App_Data\week10_review.mdf" />
+    <Content Include="App_Data\week10_review_log.ldf">
+      <DependentUpon>week10_review.mdf</DependentUpon>
+    </Content>
     <Content Include="profile_wanwan.jpg" />
     <Content Include="profile_wanwan2.jpg" />
     <Content Include="profile_wanwan_angry.jpg" />
@@ -76,7 +80,9 @@
     <Content Include="w3.css" />
     <Content Include="week05_HTML_SeverContorl.aspx" />
     <Content Include="WebServerControl.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="StyleForClassLab.css" />
     <Content Include="week05_Labs_Regex.aspx" />
     <Content Include="week06_lab.aspx" />
@@ -85,8 +91,23 @@
     <Content Include="week07_Fri_SmartBox.ascx" />
     <Content Include="week07_Mon_labs.aspx" />
     <Content Include="week07_Fri_upload2.aspx" />
+    <Content Include="week10_db.aspx" />
+    <Content Include="week11_db.aspx" />
+    <Content Include="week12_Pquiz.aspx" />
+    <Content Include="week12_DB.aspx" />
+    <Content Include="week12_Quiz.aspx" />
+    <Content Include="week12_Rquiz1.aspx" />
+    <Content Include="week12_Rquiz2.aspx" />
+    <Content Include="week12_Rquiz3.aspx" />
+    <Content Include="week12_Rquiz4.aspx" />
+    <Content Include="week12_RquizF.aspx" />
+    <Content Include="week12_RquizS.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionClass.cs" />
+    <Compile Include="Info.cs" />
+    <Compile Include="Qconnect.cs" />
+    <Compile Include="Qinfo.cs" />
     <Compile Include="week05_HTML_SeverContorl.aspx.cs">
       <DependentUpon>week05_HTML_SeverContorl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +185,83 @@
     </Compile>
     <Compile Include="week08_Mon_FrontPage.Master.designer.cs">
       <DependentUpon>week08_Mon_FrontPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="week10_db.aspx.cs">
+      <DependentUpon>week10_db.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week10_db.aspx.designer.cs">
+      <DependentUpon>week10_db.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week11_db.aspx.cs">
+      <DependentUpon>week11_db.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week11_db.aspx.designer.cs">
+      <DependentUpon>week11_db.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Pquiz.aspx.cs">
+      <DependentUpon>week12_Pquiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Pquiz.aspx.designer.cs">
+      <DependentUpon>week12_Pquiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_DB.aspx.cs">
+      <DependentUpon>week12_DB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_DB.aspx.designer.cs">
+      <DependentUpon>week12_DB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Quiz.aspx.cs">
+      <DependentUpon>week12_Quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Quiz.aspx.designer.cs">
+      <DependentUpon>week12_Quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Rquiz1.aspx.cs">
+      <DependentUpon>week12_Rquiz1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Rquiz1.aspx.designer.cs">
+      <DependentUpon>week12_Rquiz1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Rquiz2.aspx.cs">
+      <DependentUpon>week12_Rquiz2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Rquiz2.aspx.designer.cs">
+      <DependentUpon>week12_Rquiz2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Rquiz3.aspx.cs">
+      <DependentUpon>week12_Rquiz3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Rquiz3.aspx.designer.cs">
+      <DependentUpon>week12_Rquiz3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_Rquiz4.aspx.cs">
+      <DependentUpon>week12_Rquiz4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_Rquiz4.aspx.designer.cs">
+      <DependentUpon>week12_Rquiz4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_RquizF.aspx.cs">
+      <DependentUpon>week12_RquizF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_RquizF.aspx.designer.cs">
+      <DependentUpon>week12_RquizF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="week12_RquizS.aspx.cs">
+      <DependentUpon>week12_RquizS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="week12_RquizS.aspx.designer.cs">
+      <DependentUpon>week12_RquizS.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

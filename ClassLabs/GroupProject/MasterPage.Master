@@ -1,0 +1,72 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GroupProject.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Group Project (Online Kid's Item Store)</title>
+	
+ 
+<link href="https://fonts.googleapis.com/css?family=Cabin|Dosis|Love+Ya+Like+A+Sister|Varela+Round" rel="stylesheet">
+	<link href="kids.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<form id="form" runat="server">
+<header id="header">  
+Online  <asp:Image ID="logo" runat="server" ImageUrl="~/kids.PNG" Height="50px" Width="60px" CssClass="logo" />   Item Store  
+</header>  
+
+<nav id="nav">  
+    <ul>  
+        <li><a href="home.aspx">Home</a></li>  
+        <li><a href="#">Catalog</a></li>  
+        <li><a href="#">Search</a></li>  
+		<li><a href="#">Contact</a></li>  
+        <li><a href="register.aspx">Register</a></li>  
+	</ul>  
+</nav>  
+	<div id="buttons">
+  <asp:LinkButton ID="loginBtn" runat="server"  CssClass="button" PostBackUrl="~/login.aspx">Login</asp:LinkButton>
+  <asp:LinkButton ID="MyPageBtn" runat="server"  CssClass="button"  Visible="False">MyPage</asp:LinkButton>
+  <asp:LinkButton ID="logoutBtn" runat="server"  CssClass="button"  Visible="False" OnClick="logoutBtn_Click">Logout</asp:LinkButton>
+    </div>
+
+
+<div id="mainSection">
+<asp:ContentPlaceHolder ID="main" runat="server">  
+          
+</asp:ContentPlaceHolder> 
+</div>		
+
+  
+  
+<footer id="footer">  
+ⓒ 2018 Centennial ASP.NET Class Group Project  
+</footer>  
+</body>  
+	</form>
+</html>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+        </div>
+    </form>
+</body>
+</html>

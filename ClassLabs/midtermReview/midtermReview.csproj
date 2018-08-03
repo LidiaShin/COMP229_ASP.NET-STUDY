@@ -68,14 +68,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angry.jpg" />
+    <Content Include="bug.jpg" />
+    <Content Include="changmin01.jpg" />
     <Content Include="Chap02_a1.aspx" />
     <Content Include="Chap02_a2.aspx" />
     <Content Include="Chap03_S16_C.aspx" />
     <Content Include="Chap03_S13_VB.aspx" />
     <Content Include="Chap03_S24.aspx" />
+    <Content Include="Chap03_S27.aspx" />
+    <Content Include="Chap03_FunctionVB.aspx" />
+    <Content Include="Chap03_FunctionC.aspx" />
     <Content Include="Chap03_S5_VB.aspx" />
     <Content Include="Chap01.aspx" />
+    <Content Include="Chap04_AdvCtr.aspx" />
+    <Content Include="Chap04_AR.xml" />
+    <Content Include="Chap04_ListCtr.aspx" />
+    <Content Include="Chap04_VB.aspx" />
+    <Content Include="dodam.ascx" />
+    <Content Include="heize1.jpg" />
+    <Content Include="heize2.jpg" />
+    <Content Include="images.jpg" />
     <Content Include="Web.config" />
+    <Content Include="win.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chap02_a1.aspx.cs">
@@ -113,6 +128,27 @@
     <Compile Include="Chap03_S24.aspx.designer.cs">
       <DependentUpon>Chap03_S24.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Chap03_S27.aspx.cs">
+      <DependentUpon>Chap03_S27.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03_S27.aspx.designer.cs">
+      <DependentUpon>Chap03_S27.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03_FunctionVB.aspx.cs">
+      <DependentUpon>Chap03_FunctionVB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03_FunctionVB.aspx.designer.cs">
+      <DependentUpon>Chap03_FunctionVB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap03_FunctionC.aspx.cs">
+      <DependentUpon>Chap03_FunctionC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap03_FunctionC.aspx.designer.cs">
+      <DependentUpon>Chap03_FunctionC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Chap03_S5_VB.aspx.cs">
       <DependentUpon>Chap03_S5_VB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,9 +163,38 @@
     <Compile Include="Chap01.aspx.designer.cs">
       <DependentUpon>Chap01.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Chap04_AdvCtr.aspx.cs">
+      <DependentUpon>Chap04_AdvCtr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04_AdvCtr.aspx.designer.cs">
+      <DependentUpon>Chap04_AdvCtr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04_ListCtr.aspx.cs">
+      <DependentUpon>Chap04_ListCtr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04_ListCtr.aspx.designer.cs">
+      <DependentUpon>Chap04_ListCtr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chap04_VB.aspx.cs">
+      <DependentUpon>Chap04_VB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chap04_VB.aspx.designer.cs">
+      <DependentUpon>Chap04_VB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dodam.ascx.cs">
+      <DependentUpon>dodam.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dodam.ascx.designer.cs">
+      <DependentUpon>dodam.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Web.sitemap" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -137,6 +202,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="upup\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
