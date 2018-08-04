@@ -1,25 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeBehind="login.aspx.cs" Inherits="GroupProject.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeBehind="login.aspx.cs" Inherits="GroupProject.login"  Theme="kidsThme"%>
 <asp:Content ID="content1" ContentPlaceHolderID="main" runat="server">
-	<!DOCTYPE html>
-	<link href="kids.css" rel="stylesheet" type="text/css" />
-	<div class="left box">
-	&nbsp;<asp:Image ID="Image1" runat="server" ImageUrl="~/PImage.PNG" Height="50%" Width="50%" />
-		</div>
+	
+	
+<!DOCTYPE html>
 
-	<div class="wrapper">
+
+ <div class="wrapper_left">
     <form class="form-signin">       
-     <h2>Please login</h2>
-	<asp:TextBox ID="uName" runat="server" placeholder="User Name" CssClass="uname"></asp:TextBox> <br />
-    <asp:TextBox ID="pWord" runat="server" placeholder="Password" CssClass="pword"></asp:TextBox> 
+      <h5 class="form-signin-heading">Please login</h5>
+<asp:TextBox ID="uName" runat="server" placeholder="Username" required="" autofocus="" CssClass="form-control" SkinID="usernamebox"></asp:TextBox> 
+<asp:TextBox ID="pWord" runat="server" placeholder="Password" required="" CssClass="form-control" TextMode="Password" SkinID="passwordbox"></asp:TextBox> 
+<asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" CssClass="btn btn-lg btn-primary btn-block" />
 
-      <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" /><br /><br />
-      
-    
     </form>
   </div>
-	
-		<asp:Label ID="result" runat="server" Text=""></asp:Label>
-		<input type="hidden" id="hdn" runat="server" value="0" />
+
+<asp:Label ID="result" runat="server" Text=""></asp:Label>
+<input type="hidden" id="hdn" runat="server" value="0" />
+
+
+<div class="wrapper_right">
+   
+  </div>
+<div style="clear:both; font-size:1px;"></div>
+
+<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+<input type="hidden" id="Hidden1" runat="server" value="0" />
 
 
 </asp:Content>

@@ -1,9 +1,13 @@
-﻿#header {
-	
+﻿#header{	
+	margin-top:20px;
 	text-align: center;
 	font-size: 40px;
 	font-family: 'Love Ya Like A Sister', cursive;
 	color: #383839;
+}
+
+.logo {
+	vertical-align:top;
 }
 
 
@@ -19,8 +23,9 @@
 	font-family: 'Cabin', sans-serif;
 	background-color: whitesmoke;
 	width: 120px;
-	height: 30px;
+	height: 30px;	
 }
+
 
 ul {
 	text-align: center;
@@ -31,6 +36,7 @@ li a {
 	color: #84a5b4;
 	font-family: 'Varela Round', sans-serif;
 	font-size: 20px;
+	text-decoration: none;
 }
 
 li {
@@ -39,24 +45,97 @@ li {
 	column-width: 20px;
 }
 
+hover {
+	text-decoration: none;
+}
 a {
 	text-decoration: none;
-	margin-left: 20px
+	margin-left: 20px;
 }
 
 li a:hover {
-	color: #1d2428; 
+	color: #1d2428;
+	text-decoration: none;
 }
 
 #mainSection {
 	width: 80%;
-	height: 300px;
+	height: 400px;
 	bottom: 100px;
 	padding: 10px;
 	margin:auto;
 	border: 2px solid #777f7b;
 	
 }
+
+
+.wrapper_left{
+	float:left;
+	width:30%;
+	height:70%;
+	margin-top: 80px;
+	margin-left: 80px;
+	background-color:azure;
+	padding:20px;
+}
+
+
+.wrapper_right {
+	float: right;
+	width: 45%;
+	height: 70%;
+	padding: 20px;
+	margin-top: 80px;
+	margin-right: 80px;
+	background-color: blanchedalmond;
+}
+
+.form-signin {
+    width: 100px;
+	padding: 15px 35px 45px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+
+
+
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #footer {
 	font-family: 'Dosis', sans-serif;
 	background-color: #e5f2f2;
@@ -68,73 +147,10 @@ li a:hover {
 }
 
 
-
-
-
-
-
-
-
 .box {
 	display: inline-table;
 	position: relative;
 	vertical-align: top;
 	
-}
-
-
-
-.left {
-	width: 30%;
-	
-	padding: 20px;
-	border: 2px solid #777f7b;
-}
-
-.right {
-	
-	width: 40%;
-	
-	padding: 40px 0 0 20px;
-	text-align: left;
-	border: 2px solid #777f7b;
-}
-
-.wrapper {
-	margin-top: 80px;
-	margin-bottom: 80px;
-}
-
-.form-signin {
-	max-width: 380px;
-	padding: 15px 35px 45px;
-	margin: 0 auto;
-	background-color: #fff;
-	border: 1px solid rgba(0,0,0,0.1);
-	margin-bottom: 30px;
-}
-
-
-.form-control {
-	position: relative;
-	font-size: 16px;
-	height: auto;
-	padding: 10px;
-	z-index: 2;
-}
-
-
-
-
-.uname{
-	margin-bottom: -1px;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-pword{
-	margin-bottom: 20px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
 }
 

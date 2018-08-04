@@ -2,8 +2,8 @@
 <asp:Content ID="content1" ContentPlaceHolderID="main" runat="server">
 	
 	
+
 	
-	
-	<asp:Image ID="Image1" runat="server" ImageUrl="~/angry.jpg" />
+<asp:Image ID="Image1" runat="server" ImageUrl="~/angry.jpg" />
 
 </asp:Content>
