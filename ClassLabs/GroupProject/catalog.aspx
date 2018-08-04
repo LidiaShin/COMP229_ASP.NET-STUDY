@@ -6,10 +6,10 @@
 <div class="wrapper">
    
 
-<asp:LinkButton ID="toy" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Toy" OnClick="ENameLinkBtn_Click" CommandArgument="toy"></asp:LinkButton>  
+<asp:LinkButton ID="default" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="All" OnClick="ENameLinkBtn_Click" CommandArgument="default"></asp:LinkButton>  
 <asp:LinkButton ID="stroller" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Stroller" OnClick="ENameLinkBtn_Click" CommandArgument="stroller"></asp:LinkButton>  
 <asp:LinkButton ID="cloth" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Cloth" OnClick="ENameLinkBtn_Click" CommandArgument="cloth"></asp:LinkButton>  
-
+<asp:LinkButton ID="food" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Food" OnClick="ENameLinkBtn_Click" CommandArgument="food"></asp:LinkButton>  
 
 
 

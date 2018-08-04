@@ -26,12 +26,14 @@ namespace GroupProject
         {
             if (sGroup == "toy")
                 sGroup = "1";
-            if (sGroup == "stroller")
+            else if (sGroup == "stroller")
                 sGroup = "2";
-            if (sGroup == "cloth")
+            else if (sGroup == "cloth")
                 sGroup = "3";
-            else
+            else if (sGroup == "food")
                 sGroup = "4";
+            else
+                sGroup = "";
 
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
@@ -43,10 +45,13 @@ namespace GroupProject
             da.Fill(dt);
             con.Close();
             ds.Tables.Add(dt);
+
+
+
             if (sGroup != "")
             {
                 var dv = ds.Tables[0].DefaultView;
-                //dv.RowFilter = "CategoryID='" + sGroup + "'";
+                dv.RowFilter = "CategoryID='" + sGroup + "'";
                 DataSet ds1 = new DataSet();
                 var newdt = dv.ToTable();
                 ds1.Tables.Add(newdt);
@@ -54,6 +59,8 @@ namespace GroupProject
                 ListView1.DataSource = ds1.Tables[0];
                 ListView1.DataBind();
             }
+          
+
             else
             {
                 ListView1.DataSource = ds.Tables[0];
@@ -61,6 +68,7 @@ namespace GroupProject
             }
 
         }
+
         //paging code  
         protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
@@ -69,7 +77,7 @@ namespace GroupProject
             if (hdnText.Value != "")
             {
                 string yourValue = hdnText.Value.ToString();
-                if (yourValue == "1")
+                if (yourValue == "Default")
                 {
 
                     ListViewControlBind("");
@@ -89,7 +97,7 @@ namespace GroupProject
             LinkButton btn = (LinkButton)(sender);
             string yourValue = btn.CommandArgument;
             // do what you need here  
-            if (yourValue == "1")
+            if (yourValue == "Default")
             {
                 hdnText.Value = yourValue;
                 ListViewControlBind("");

@@ -13,13 +13,13 @@ namespace GroupProject {
     public partial class catalog {
         
         /// <summary>
-        /// toy control.
+        /// default control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton toy;
+        protected global::System.Web.UI.WebControls.LinkButton @default;
         
         /// <summary>
         /// stroller control.
@@ -38,6 +38,15 @@ namespace GroupProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton cloth;
+        
+        /// <summary>
+        /// food control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton food;
         
         /// <summary>
         /// hdnText control.
