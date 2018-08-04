@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="angry.jpg" />
+    <Content Include="catalog.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
     <Content Include="css\bootstrap-reboot.css" />
@@ -91,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="catalog.aspx.cs">
+      <DependentUpon>catalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalog.aspx.designer.cs">
+      <DependentUpon>catalog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConnectClass.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

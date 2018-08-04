@@ -24,7 +24,7 @@ Online  <asp:Image ID="logo" runat="server" ImageUrl="~/kids.PNG" Height="50px" 
 <nav id="nav">  
     <ul>  
         <li><a href="home.aspx">Home</a></li>  
-        <li><a href="#">Catalog</a></li>  
+        <li><a href="catalog.aspx">Catalog</a></li>  
         <li><a href="#">Search</a></li>  
 		<li><a href="#">Contact</a></li>  
         <li><a href="register.aspx">Register</a></li>  

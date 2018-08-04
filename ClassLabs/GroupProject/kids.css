@@ -69,11 +69,23 @@ li a:hover {
 }
 
 
+
+.wrapper{
+	
+	width: 80%;
+	height: 85%;
+	margin-top: 30px;
+	margin-left: 80px;
+	background-color: azure;
+	padding: 20px;
+}
+
+
 .wrapper_left{
 	float:left;
 	width:30%;
-	height:70%;
-	margin-top: 80px;
+	height:85%;
+	margin-top: 30px;
 	margin-left: 80px;
 	background-color:azure;
 	padding:20px;
@@ -83,9 +95,9 @@ li a:hover {
 .wrapper_right {
 	float: right;
 	width: 45%;
-	height: 70%;
+	height: 85%;
 	padding: 20px;
-	margin-top: 80px;
+	margin-top: 30px;
 	margin-right: 80px;
 	background-color: blanchedalmond;
 }
