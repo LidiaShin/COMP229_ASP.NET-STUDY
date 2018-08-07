@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="angry.jpg" />
     <Content Include="catalog.aspx" />
+    <Content Include="comment.aspx" />
+    <Content Include="contact.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
     <Content Include="css\bootstrap-reboot.css" />
@@ -92,6 +94,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="catalog.aspx.cs">
       <DependentUpon>catalog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,7 +102,22 @@
     <Compile Include="catalog.aspx.designer.cs">
       <DependentUpon>catalog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="comment.aspx.cs">
+      <DependentUpon>comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comment.aspx.designer.cs">
+      <DependentUpon>comment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConnectClass.cs" />
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

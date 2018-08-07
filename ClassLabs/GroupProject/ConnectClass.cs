@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace GroupProject
 {
@@ -28,12 +29,65 @@ namespace GroupProject
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
+
             finally
             {
                 cn.Close();
             }
 
         }
+
+
+
+        public static void addToCart(Cart cart)
+        {
+            string query = string.Format(@"UPDATE OrderItem SET Qty = ('{0}') where productID = ('{1}');", cart.Quantity, cart.ProductID);
+
+            cmd = new SqlCommand(query, cn);
+
+
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+
+        public static void seeDetails(Details detail)
+        {
+            string query = string.Format(@"select Description,PicURL from Products where productID = ('{0}');", detail.ProductID);
+
+            cmd = new SqlCommand(query, cn);
+
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                da.Fill(dt);
+                ds.Tables.Add(dt);
+                detail.Description = dt.Rows[0]["Description"].ToString();
+                detail.pictureURL = dt.Rows[0]["PicURL"].ToString();
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+
+
+
+
 
     }
 }

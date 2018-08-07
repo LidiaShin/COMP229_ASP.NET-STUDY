@@ -37,8 +37,9 @@ namespace GroupProject
 
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sQry = "select ProductName,CategoryID,Retail from dbo.Products";
+            string sQry = "select * from dbo.Products";
             SqlCommand cmd = new SqlCommand(sQry, con);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
@@ -68,8 +69,7 @@ namespace GroupProject
             }
 
         }
-
-        //paging code  
+ 
         protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             (ListView1.FindControl("DataPager1") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
@@ -79,7 +79,6 @@ namespace GroupProject
                 string yourValue = hdnText.Value.ToString();
                 if (yourValue == "Default")
                 {
-
                     ListViewControlBind("");
                 }
                 else
@@ -96,7 +95,7 @@ namespace GroupProject
         {
             LinkButton btn = (LinkButton)(sender);
             string yourValue = btn.CommandArgument;
-            // do what you need here  
+           
             if (yourValue == "Default")
             {
                 hdnText.Value = yourValue;
@@ -106,6 +105,72 @@ namespace GroupProject
             {
                 hdnText.Value = yourValue;
                 ListViewControlBind(yourValue);
+            }
+        }
+
+        int qty { get; set; }
+        int pID { get; set; }
+
+        string desc { get; set; }
+
+        string picURL { get; set; }
+
+
+        protected void AddToCart(object sender, EventArgs e)
+        {
+           
+            try
+            {
+              
+                qty = 100;
+
+                LinkButton btn = (LinkButton)(sender);
+                pID = Convert.ToInt32(btn.CommandArgument);
+                // test CommandArgument 
+
+
+                Cart addToCart = new Cart(qty,pID);
+                ConnectClass.addToCart(addToCart);
+                //string msg = "Register Successfully!";
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
+                //Response.Write("<script>alert('" + msg + "')</script>");
+                //Response.Redirect("login.aspx");
+
+                Response.Write("<script type='text/javascript'>");
+                Response.Write("alert('Successfully added! ');");
+               
+                Response.Write("</script>");
+
+            }
+            catch
+            {
+                result.Text = "Failed!";
+            }
+        }
+
+
+
+      
+
+        protected void SeeDetail(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Button btn = (Button)(sender);
+                pID = Convert.ToInt32(btn.CommandArgument);
+                // test CommandArgument 
+
+                Details SeeDetails = new Details(pID, desc, picURL);
+                ConnectClass.seeDetails(SeeDetails);
+                detailView.Text = SeeDetails.Description;
+                productPic.ImageUrl = SeeDetails.pictureURL;
+
+
+            }
+            catch
+            {
+                detailView.Text = "Failed!";
             }
         }
 

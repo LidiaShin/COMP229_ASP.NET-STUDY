@@ -10,7 +10,7 @@
 namespace GroupProject {
     
     
-    public partial class myPage {
+    public partial class comment {
         
         /// <summary>
         /// usernamelbl control.
@@ -22,30 +22,48 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.Label usernamelbl;
         
         /// <summary>
-        /// bdaylbl control.
+        /// usernametxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bdaylbl;
+        protected global::System.Web.UI.WebControls.TextBox usernametxt;
         
         /// <summary>
-        /// phonelbl control.
+        /// item control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phonelbl;
+        protected global::System.Web.UI.WebControls.TextBox item;
         
         /// <summary>
-        /// emaillbl control.
+        /// comments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emaillbl;
+        protected global::System.Web.UI.WebControls.TextBox comments;
+        
+        /// <summary>
+        /// submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button submit;
+        
+        /// <summary>
+        /// view control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button view;
     }
 }
