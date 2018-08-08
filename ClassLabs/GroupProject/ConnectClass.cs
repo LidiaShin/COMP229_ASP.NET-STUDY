@@ -81,6 +81,23 @@ namespace GroupProject
             {
                 cn.Close();
             }
+        }
+
+        public static void writeComment(Comment comment)
+        {
+            string query = string.Format(@"Insert into Comment Values ('{0}', '{1}','{2}')", 
+                comment.userName, comment.itemName, comment.itemComment);
+
+            cmd = new SqlCommand(query, cn);
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
 
         }
 

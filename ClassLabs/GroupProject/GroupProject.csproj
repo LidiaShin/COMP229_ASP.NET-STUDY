@@ -109,6 +109,7 @@
     <Compile Include="comment.aspx.designer.cs">
       <DependentUpon>comment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Comment.cs" />
     <Compile Include="ConnectClass.cs" />
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>

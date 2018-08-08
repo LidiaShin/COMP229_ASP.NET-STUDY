@@ -58,50 +58,40 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 			 
            
         </tr>
-        <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
-        <tr>
-            <td colspan = "5">
-                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="10">
-                    <Fields>
-                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
+<asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
+
+<tr>
+<td colspan = "5">
+<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="5">
+<Fields>
+<asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
                             ShowNextPageButton="false" />
-                        <asp:NumericPagerField ButtonType="Link" />
-                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" />
-                    </Fields>
-                </asp:DataPager>
-            </td>
-        </tr>
-    </table>
+<asp:NumericPagerField ButtonType="Link" />
+<asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" />
+</Fields>
+</asp:DataPager>
+
+</td>
+</tr>
+</table>
 </LayoutTemplate>
 
 
 
 <GroupTemplate>
-    <tr>
-        <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
-    </tr>
+<tr>
+<asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
+</tr>
 </GroupTemplate>
+
 <ItemTemplate>
-    <td>
-       <%# Eval("ProductName") %>
-    </td>
-    <td>
-       <%# Eval("Retail") %>
-    </td>
-
-	<td>
-		 <asp:Button ID="Detail" runat="server" Text="See Details" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail" />
-    </td>
-
-	<td>
-		 <asp:LinkButton ID="AddToCart" runat="server" Text="Add to Cart" Font-Underline="false" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="AddToCart" />		
-    </td>
-
-	
-   
+<td><%# Eval("ProductName") %></td>
+<td><%# Eval("Retail") %></td>
+<td><asp:Button ID="Detail" runat="server" Text="See Details" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail" /></td>
+<td><asp:LinkButton ID="AddToCart" runat="server" Text="Add to Cart" Font-Underline="false" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="AddToCart" /></td>
 </ItemTemplate>
 </asp:ListView>	
-	<asp:Label ID="result" runat="server" Text="Label"></asp:Label>
+<asp:Label ID="result" runat="server" Text="Label"></asp:Label>
 </div>
 <div style="clear:both; font-size:1px;"></div>
 </asp:Content>

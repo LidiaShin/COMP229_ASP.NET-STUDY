@@ -77,7 +77,7 @@ namespace GroupProject
             if (hdnText.Value != "")
             {
                 string yourValue = hdnText.Value.ToString();
-                if (yourValue == "Default")
+                if (yourValue == "a")
                 {
                     ListViewControlBind("");
                 }

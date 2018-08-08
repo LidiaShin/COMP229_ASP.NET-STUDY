@@ -31,39 +31,66 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.TextBox usernametxt;
         
         /// <summary>
-        /// item control.
+        /// itemtxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox item;
+        protected global::System.Web.UI.WebControls.TextBox itemtxt;
         
         /// <summary>
-        /// comments control.
+        /// commenttxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox comments;
+        protected global::System.Web.UI.WebControls.TextBox commenttxt;
         
         /// <summary>
-        /// submit control.
+        /// write control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit;
+        protected global::System.Web.UI.WebControls.Button write;
         
         /// <summary>
-        /// view control.
+        /// result1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button view;
+        protected global::System.Web.UI.WebControls.Label result1;
+        
+        /// <summary>
+        /// hdnText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnText;
+        
+        /// <summary>
+        /// DisplayComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView DisplayComment;
+        
+        /// <summary>
+        /// result2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label result2;
     }
 }
