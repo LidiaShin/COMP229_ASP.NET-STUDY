@@ -19,8 +19,8 @@ namespace GroupProject
 
         public static void checkInfo(Info info)
         {
-            string query = string.Format(@"Insert into cusList Values ('{0}', '{1}','{2}','{3}','{4}')",
-            info.uName, info.pWord,info.cBirthday,info.Phone,info.Email);
+            string query = string.Format(@"SET IDENTITY_INSERT Customer ON;Insert into Customer (CusID , FirstName , LastName ,email ,Password) Values (NEXT VALUE FOR Test.CountBy1, '{0}','{1}','{2}','{3}')",
+            info.firstName, info.lastName,info.eMailAddress,info.passWord);
 
             cmd = new SqlCommand(query, cn);
 
@@ -41,7 +41,7 @@ namespace GroupProject
 
         public static void addToCart(Cart cart)
         {
-            string query = string.Format(@"UPDATE OrderItem SET Qty = ('{0}') where productID = ('{1}');", cart.Quantity, cart.ProductID);
+            string query = string.Format(@"UPDATE OrderItem SET PaidEach = ('{0}') where productID = ('{1}');", cart.Quantity, cart.ProductID);
 
             cmd = new SqlCommand(query, cn);
 

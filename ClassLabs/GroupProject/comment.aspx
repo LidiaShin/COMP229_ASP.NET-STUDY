@@ -10,7 +10,10 @@
 <asp:TextBox ID="usernametxt" size="20" runat="server"></asp:TextBox>
 </tr>
 
-<tr>item: <asp:TextBox ID="itemtxt" size="20" runat="server"></asp:TextBox></tr>
+<tr>item: <asp:DropDownList ID="itemList" runat="server" Width="100px"> </asp:DropDownList></tr>
+
+
+
 <tr>comment: <asp:TextBox ID="commenttxt" size="40"  runat="server"></asp:TextBox></tr>
 
 <tr>

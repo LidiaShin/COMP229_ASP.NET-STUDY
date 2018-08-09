@@ -11,7 +11,7 @@ namespace GroupProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null)
+            if (Session["login"] != null)
             {
                 loginBtn.Visible = false;
                 MyPageBtn.Visible = true;

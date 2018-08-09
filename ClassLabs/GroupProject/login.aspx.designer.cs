@@ -13,13 +13,13 @@ namespace GroupProject {
     public partial class login {
         
         /// <summary>
-        /// uName control.
+        /// eMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uName;
+        protected global::System.Web.UI.WebControls.TextBox eMail;
         
         /// <summary>
         /// pWord control.

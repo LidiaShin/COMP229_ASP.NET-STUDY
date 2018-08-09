@@ -30,6 +30,27 @@ namespace GroupProject
                     commentView();
 
                     usernamelbl.Text = Session["UserName"].ToString();
+
+
+
+                    
+                    SqlConnection con = new SqlConnection(connStr);
+                    con.Open();
+
+                    SqlCommand com = new SqlCommand("select * from employee", con); // table name 
+                    SqlDataAdapter da = new SqlDataAdapter(com);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);  // fill dataset
+                    itemList.DataTextField = ds.Tables[0].Columns["FirstName"].ToString(); // text field name of table dispalyed in dropdown
+                    itemList.DataValueField = ds.Tables[0].Columns["id"].ToString();             // to retrive specific  textfield name 
+                    itemList.DataSource = ds.Tables[0];      //assigning datasource to the dropdownlist
+                    itemList.DataBind();  //binding dropdownlist
+
+
+
+
+
+
                     usernametxt.Visible = false;
                     
                 }
@@ -72,18 +93,10 @@ namespace GroupProject
             da.Fill(dt);
             con.Close();
             ds.Tables.Add(dt);
-
-
-
             
-            
-                DisplayComment.DataSource = ds.Tables[0];
-                DisplayComment.DataBind();
-            
-
-
-
-
+            DisplayComment.DataSource = ds.Tables[0];
+            DisplayComment.DataBind();
+  
             //DisplayComment.DataSource = ds.Tables[0];
             //DisplayComment.DataBind();
         }
@@ -115,16 +128,18 @@ namespace GroupProject
         {
             try
             {
-                itemName = itemtxt.Text;
+                
                 itemComment = commenttxt.Text;
 
                 if (Session["username"] != null)
                 {
                     uName = usernamelbl.Text;
+                    itemName = itemList.SelectedItem.Text;
                 }
                 else
                 {
                     uName = usernametxt.Text;
+                    itemName = itemList.SelectedItem.Text;
                 }
 
 

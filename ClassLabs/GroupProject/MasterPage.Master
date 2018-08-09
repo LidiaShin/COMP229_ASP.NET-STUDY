@@ -4,11 +4,14 @@
 
 
 <head runat="server">
-    <title>Group Project (Online Kid's Item Store)</title>
+ <title>Group Project (Online Kid's Item Store)</title>
 	
 <link href="css/bootstrap.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Cabin|Dosis|Love+Ya+Like+A+Sister|Varela+Round" rel="stylesheet">
 <link href="kids.css" rel="stylesheet" type="text/css" />
+<script src="js/kidsJS.js"></script>
+
+
 	
 
 </head>
@@ -25,7 +28,7 @@ Online  <asp:Image ID="logo" runat="server" ImageUrl="~/kids.PNG" Height="50px" 
     <ul>  
         <li><a href="home.aspx">Home</a></li>  
         <li><a href="catalog.aspx">Catalog</a></li>  
-        <li><a href="#">Search</a></li>  
+        <li><a href="search.aspx">Search</a></li>  
 		<li><a href="contact.aspx">Contact</a></li>  
         <li><a href="register.aspx">Register</a></li>  
 		<li><a href="comment.aspx">Comment</a></li>  

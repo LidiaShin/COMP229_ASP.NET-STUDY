@@ -22,7 +22,7 @@ namespace GroupProject
             SqlConnection cn = new SqlConnection("data source = laptop-l82n2tn1\\sqlexpress; database=groupProject; integrated security=SSPI");
             cn.Open();
 
-            SqlCommand cmd = new SqlCommand("Select * from cusList where uName='" + uName.Text + "' and pWord ='" + pWord.Text + "'", cn);
+            SqlCommand cmd = new SqlCommand("Select * from Customer where email='" + eMail.Text + "' and Password ='" + pWord.Text + "'", cn);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -30,7 +30,7 @@ namespace GroupProject
 
             if (dt.Rows.Count > 0)
             {
-                Session["username"] = uName.Text;
+                Session["login"] = eMail.Text;
                 Response.Redirect("Home.aspx");
             }
             else
@@ -53,7 +53,7 @@ namespace GroupProject
                         break;
 
                     default:
-                        Response.Redirect("http://www.google.com");
+                        Response.Redirect("home.aspx");
                         break;
 
 

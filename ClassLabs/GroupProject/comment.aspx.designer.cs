@@ -31,13 +31,13 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.TextBox usernametxt;
         
         /// <summary>
-        /// itemtxt control.
+        /// itemList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox itemtxt;
+        protected global::System.Web.UI.WebControls.DropDownList itemList;
         
         /// <summary>
         /// commenttxt control.

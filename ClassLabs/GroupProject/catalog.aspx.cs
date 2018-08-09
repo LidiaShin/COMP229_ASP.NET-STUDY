@@ -12,7 +12,11 @@ namespace GroupProject
 {
     public partial class catalog : System.Web.UI.Page
     {
-        string connStr = ConfigurationManager.ConnectionStrings["ConnectionString2"].ConnectionString;
+        static string connStr = ConfigurationManager.ConnectionStrings["ConnectionString2"].ConnectionString;
+
+        SqlConnection cn = new SqlConnection(connStr);
+        string query;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -108,7 +112,7 @@ namespace GroupProject
             }
         }
 
-        int qty { get; set; }
+        string userID;
         int pID { get; set; }
 
         string desc { get; set; }
@@ -118,39 +122,172 @@ namespace GroupProject
 
         protected void AddToCart(object sender, EventArgs e)
         {
-           
-            try
+            /*
+             try
+             {
+
+                 qty = 100;
+
+                 LinkButton btn = (LinkButton)(sender);
+                 pID = Convert.ToInt32(btn.CommandArgument);
+                 // test CommandArgument 
+
+
+                 Cart addToCart = new Cart(qty,pID);
+                 ConnectClass.addToCart(addToCart);
+                 //string msg = "Register Successfully!";
+                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
+                 //Response.Write("<script>alert('" + msg + "')</script>");
+                 //Response.Redirect("login.aspx");
+
+                 Response.Write("<script type='text/javascript'>");
+                 Response.Write("alert('Successfully added! ');");
+
+                 Response.Write("</script>");
+
+             }
+             catch
+             {
+                 result.Text = "Failed!";
+             }
+
+     */
+
+            LinkButton btn = (LinkButton)sender;
+            bool f = false;
+            string orderID = "";
+            string price = "";
+            //check active or inactive for user's orders 
+            //inactive order: order has been paid
+            //active order: order did not been paid
+            if (Session["login"] == null)
             {
-              
-                qty = 100;
-
-                LinkButton btn = (LinkButton)(sender);
-                pID = Convert.ToInt32(btn.CommandArgument);
-                // test CommandArgument 
-
-
-                Cart addToCart = new Cart(qty,pID);
-                ConnectClass.addToCart(addToCart);
-                //string msg = "Register Successfully!";
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
-                //Response.Write("<script>alert('" + msg + "')</script>");
-                //Response.Redirect("login.aspx");
-
-                Response.Write("<script type='text/javascript'>");
-                Response.Write("alert('Successfully added! ');");
-               
-                Response.Write("</script>");
-
+                Response.Write("<script language=javascript>alert('Please login first!!')</script>");
+                Response.Write("<script language=javascript>window.location.href='login.aspx'; </script>");
             }
-            catch
+            else
             {
-                result.Text = "Failed!";
+                try
+                {
+                    userID = Session["login"].ToString();
+                    query = string.Format("Select * from Orders where CusID ={0}", userID);
+
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    IDataRecord record;
+                    while (reader.Read())
+                    {
+                        record = (IDataRecord)reader;
+                        if (record["OrderState"].ToString() == "active")
+                        {
+                            f = true;
+                            orderID = record["OrderID"].ToString();
+                        }
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    cn.Close();
+                }
+                // if customer don't have active order
+                if (f == false)
+                {
+
+                    try
+                    {
+                        query = string.Format("INSERT INTO Orders ( CusID,OrderState) VALUES ( {0},'active');", userID);
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                    }
+                    finally
+                    {
+                        cn.Close();
+                    }
+
+                }
+                // find the order id we just created
+                try
+                {
+                    query = string.Format("Select * from orders where CusID ={0}", userID);
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    IDataRecord record;
+                    while (reader.Read())
+                    {
+                        record = (IDataRecord)reader;
+                        if (record["OrderState"].ToString() == "active")
+                        {
+                            f = true;
+                            orderID = record["OrderID"].ToString();
+                        }
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    cn.Close();
+                }
+
+
+                // find the price of product 
+                try
+                {
+                    query = string.Format("Select Retail from product where ProductID ={0}", btn.CommandArgument);
+                    SqlCommand comd1 = new SqlCommand(query, cn);
+                    cn.Open();
+                    SqlDataReader reader1 = comd1.ExecuteReader();
+                    while (reader1.Read())
+                    {
+                        IDataRecord record = (IDataRecord)reader1;
+                        price = record["Retail"].ToString();
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    cn.Close();
+                }
+
+                // insert data to orderItem
+                try
+                {
+                    query = string.Format("INSERT INTO OrderItem (OrderID,ProductID,Quantity ,PaidEach) VALUES ({0},{1},1,{2});", orderID, btn.CommandArgument, price);
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                    ClientScript.RegisterStartupScript(GetType(), "message", "<script>alert('add item to cart success!!');</script>");
+
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    cn.Close();
+                }
             }
+
+
+
+
         }
 
 
 
-      
+
 
         protected void SeeDetail(object sender, EventArgs e)
         {

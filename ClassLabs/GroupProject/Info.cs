@@ -7,19 +7,19 @@ namespace GroupProject
 {
     public class Info
     {
-        public string uName { get; set; }
-        public string pWord { get; set; }
-        public string cBirthday { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+      
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string eMailAddress { get; set; }
+        public string passWord { get; set; }
 
-        public Info(string uname, string pword, string cbirthday,string phone,string email)
+        public Info(string fname, string lname,string email,string pword)
         {
-            uName = uname;
-            pWord = pword;
-            cBirthday = cbirthday;
-            Phone = phone;
-            Email = email;
+            firstName = fname;
+            lastName = lname;
+            eMailAddress = email;
+            passWord = pword;
+           
         }
     }
 }

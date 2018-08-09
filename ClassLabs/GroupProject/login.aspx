@@ -5,17 +5,18 @@
 <!DOCTYPE html>
 
 
- <div class="wrapper_left">
-    <form class="form-signin">       
+<div class="wrapper_left">
+<form class="form-signin">       
       <h5 class="form-signin-heading">Please login</h5>
-<asp:TextBox ID="uName" runat="server" placeholder="Username" required="" autofocus="" CssClass="form-control" SkinID="usernamebox"></asp:TextBox> 
+<asp:TextBox ID="eMail" runat="server" placeholder="Email" required="" autofocus="" CssClass="form-control" SkinID="usernamebox"></asp:TextBox> 
 <asp:TextBox ID="pWord" runat="server" placeholder="Password" required="" CssClass="form-control" TextMode="Password" SkinID="passwordbox"></asp:TextBox> 
 <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" CssClass="btn btn-lg btn-primary btn-block" />
+</form>
 
-    </form>
+	<asp:Label ID="result" runat="server" Text=""></asp:Label>
   </div>
 
-<asp:Label ID="result" runat="server" Text=""></asp:Label>
+
 <input type="hidden" id="hdn" runat="server" value="0" />
 
 

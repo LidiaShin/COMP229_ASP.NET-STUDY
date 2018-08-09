@@ -15,24 +15,22 @@ namespace GroupProject
         {
 
         }
-        string username { get; set; }
-        string password { get; set; }
-        string childBirthday { get; set; }
-        string phone { get; set; }
+        string firstname { get; set; }
+        string lastname { get; set; }
         string email { get; set; }
+        string password { get; set; }
+       
         protected void check_Click(object sender, EventArgs e)
         {
             try
             {
-                username = uName.Text;
+                firstname = fName.Text;
+                lastname = lName.Text;
+               
+                email = eMail.Text;
                 password = pWord.Text;
-                childBirthday = Calendar1.SelectedDate.ToString("dd MMMM - yyyy");
-                phone = Phone.Text;
-                email = Email.Text;
 
-
-
-                Info infoCheck = new Info(username, password,childBirthday,phone,email);
+                Info infoCheck = new Info(firstname,lastname,email,password);
                 ConnectClass.checkInfo(infoCheck);
                 //string msg = "Register Successfully!";
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
@@ -51,17 +49,8 @@ namespace GroupProject
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Calendar1.Visible = true;
+        
 
-        }
-
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-
-            cBirthdayDisplay.Text = "Your kid's birthday is : " + Calendar1.SelectedDate.ToString("dd MMMM - yyyy");
-            // Calendar1.Visible = false;
-        }
+        
     }
 }

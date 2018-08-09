@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="angry.jpg" />
     <Content Include="catalog.aspx" />
     <Content Include="comment.aspx" />
     <Content Include="contact.aspx" />
@@ -83,15 +82,19 @@
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="kid1.css" />
+    <Content Include="js\kidsJS.js" />
     <Content Include="kids.css" />
     <Content Include="kids.PNG" />
     <Content Include="login.aspx" />
-    <Content Include="my.css" />
     <Content Include="myPage.aspx" />
+    <Content Include="pics\home1.jpg" />
+    <Content Include="pics\home2.jpg" />
+    <Content Include="pics\home3.jpg" />
     <Content Include="PImage.PNG" />
     <Content Include="register.aspx" />
+    <Content Include="search.aspx" />
     <Content Include="Web.config" />
+    <Content Include="win.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
@@ -155,6 +158,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,8 @@ namespace GroupProject
         public string userName { get; set; }
         public string itemName { get; set; }
         public string itemComment { get; set; }
+
+        
        
         public Comment (string uName, string iName, string iComment)
         {

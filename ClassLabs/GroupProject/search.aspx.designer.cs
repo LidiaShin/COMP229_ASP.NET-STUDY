@@ -10,42 +10,42 @@
 namespace GroupProject {
     
     
-    public partial class contact {
+    public partial class search {
         
         /// <summary>
-        /// uName control.
+        /// ddlAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAge;
         
         /// <summary>
-        /// eMail control.
+        /// ddlGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox eMail;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
         
         /// <summary>
-        /// subject control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox subject;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// content control.
+        /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox content;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
     }
 }
