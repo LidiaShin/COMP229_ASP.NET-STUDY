@@ -4,7 +4,7 @@
 <!-- Slideshow container -->
 <div class="slideshow-container">
 		
-  <!-- Full-width images with number and caption text -->
+ <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
    
 	 <asp:Image ID="Image1" runat="server"   ImageUrl="~/pics/home1.jpg"   CssClass="homeImages" />
@@ -38,7 +38,8 @@
 
 
 
-	
+	
+
 
 
 </asp:Content>

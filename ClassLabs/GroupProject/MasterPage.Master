@@ -1,30 +1,24 @@
-﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GroupProject.MasterPage"  %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GroupProject.MasterPage"  %>
 
 <!DOCTYPE html>
 
 
 <head runat="server">
- <title>Group Project (Online Kid's Item Store)</title>
+<title>Group Project (Online Kid's Item Store)</title>
 	
 <link href="css/bootstrap.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Cabin|Dosis|Love+Ya+Like+A+Sister|Varela+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dosis|Love+Ya+Like+A+Sister|Varela+Round|Julius+Sans+One" rel="stylesheet">
 <link href="kids.css" rel="stylesheet" type="text/css" />
 <script src="js/kidsJS.js"></script>
-
-
-	
-
 </head>
+
 <body>
 <form id="form1" runat="server">
+
 <div id="header">  
-Online  <asp:Image ID="logo" runat="server" ImageUrl="~/kids.PNG" Height="50px" Width="60px" CssClass="logo" />   Item Store  
+Online  <asp:Image ID="logo" runat="server" ImageUrl="~/pics/kids.PNG" Height="50px" Width="60px" CssClass="logo" />   Item Store  
 </div>  
 
-	
-
-
-<nav id="nav">  
     <ul>  
         <li><a href="home.aspx">Home</a></li>  
         <li><a href="catalog.aspx">Catalog</a></li>  
@@ -33,28 +27,26 @@ Online  <asp:Image ID="logo" runat="server" ImageUrl="~/kids.PNG" Height="50px" 
         <li><a href="register.aspx">Register</a></li>  
 		<li><a href="comment.aspx">Comment</a></li>  
 	</ul>  
-</nav>  
-	<div id="buttons">
-  <asp:LinkButton ID="loginBtn" runat="server"  CssClass="button" Font-Underline="false" PostBackUrl="~/login.aspx">Login</asp:LinkButton>
-  <asp:LinkButton ID="MyPageBtn" runat="server"  CssClass="button"  Font-Underline="false" Visible="False" PostBackUrl="~/myPage.aspx">MyPage</asp:LinkButton>
-  <asp:LinkButton ID="logoutBtn" runat="server"  CssClass="button"  Font-Underline="false" Visible="False" OnClick="logoutBtn_Click">Logout</asp:LinkButton>
-    </div>
 
+<div id="loginArea"> 
+<asp:Button ID="login" runat="server" Text="login" PostBackUrl="~/login.aspx" CssClass="btn" />
+<asp:Button ID="logout" runat="server" Text="logout" CssClass="btn" OnClick="logoutBtn_Click" />
+<asp:Button ID="myPage" runat="server" Text="mypage" PostBackUrl="~/mypage.aspx" CssClass="btn" />
+</div>
 
-<div id="mainSection">
+<div id="mainArea">
+<div id="contentArea">
 <asp:ContentPlaceHolder ID="main" runat="server">  
-          
 </asp:ContentPlaceHolder> 
 </div>		
 
-  
-  
+
+ 
+
+</div>	
+
 <footer id="footer">  
-ⓒ 2018 Centennial ASP.NET Class Group Project  
-</footer>  
-	</form>
+ⓒ 2018 Centennial ASP.NET Class Group Project  &nbsp;&nbsp;&nbsp;&nbsp;
+</footer> 
+</form>
 </body>  
-
-
-
-

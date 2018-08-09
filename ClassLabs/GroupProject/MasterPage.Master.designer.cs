@@ -31,31 +31,31 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.Image logo;
         
         /// <summary>
-        /// loginBtn control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton loginBtn;
+        protected global::System.Web.UI.WebControls.Button login;
         
         /// <summary>
-        /// MyPageBtn control.
+        /// logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton MyPageBtn;
+        protected global::System.Web.UI.WebControls.Button logout;
         
         /// <summary>
-        /// logoutBtn control.
+        /// myPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logoutBtn;
+        protected global::System.Web.UI.WebControls.Button myPage;
         
         /// <summary>
         /// main control.

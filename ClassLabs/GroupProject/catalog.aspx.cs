@@ -13,15 +13,46 @@ namespace GroupProject
     public partial class catalog : System.Web.UI.Page
     {
         static string connStr = ConfigurationManager.ConnectionStrings["ConnectionString2"].ConnectionString;
+        SqlConnection con = new SqlConnection(connStr);
+        //SqlConnection cn = new SqlConnection(connStr);
 
-        SqlConnection cn = new SqlConnection(connStr);
-        string query;
-        
+        string email;
+        string userID;
+        string NuserID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] != null)
+            {
+                email = Session["login"].ToString();
+            }
+
             if (!IsPostBack)
             {
                 ListViewControlBind("");
+
+                 if (Session["login"] != null)
+                 {
+                     //Retrieving UserName from Session
+                     email = Session["login"].ToString();
+
+                     //SqlConnection con = new SqlConnection(connStr);
+                     con.Open();
+                     string sQry = "Select * from Customer where email='" + email + "'";
+
+                     SqlCommand cmd = new SqlCommand(sQry, con);
+
+                     SqlDataAdapter da = new SqlDataAdapter(cmd);
+                     DataTable dt = new DataTable();
+                     DataSet ds = new DataSet();
+                     da.Fill(dt);
+
+                     con.Close();
+                     ds.Tables.Add(dt);
+                     userID = dt.Rows[0]["CusID"].ToString();
+
+                    test1.Text = userID;
+                    NuserID = test1.Text;
+                 }
             }
         }
 
@@ -41,7 +72,7 @@ namespace GroupProject
 
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sQry = "select * from dbo.Products";
+            string sQry = "select * from dbo.Product";
             SqlCommand cmd = new SqlCommand(sQry, con);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -112,7 +143,7 @@ namespace GroupProject
             }
         }
 
-        string userID;
+        
         int pID { get; set; }
 
         string desc { get; set; }
@@ -122,41 +153,38 @@ namespace GroupProject
 
         protected void AddToCart(object sender, EventArgs e)
         {
-            /*
-             try
-             {
-
-                 qty = 100;
-
-                 LinkButton btn = (LinkButton)(sender);
-                 pID = Convert.ToInt32(btn.CommandArgument);
-                 // test CommandArgument 
-
-
-                 Cart addToCart = new Cart(qty,pID);
-                 ConnectClass.addToCart(addToCart);
-                 //string msg = "Register Successfully!";
-                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
-                 //Response.Write("<script>alert('" + msg + "')</script>");
-                 //Response.Redirect("login.aspx");
-
-                 Response.Write("<script type='text/javascript'>");
-                 Response.Write("alert('Successfully added! ');");
-
-                 Response.Write("</script>");
-
-             }
-             catch
-             {
-                 result.Text = "Failed!";
-             }
-
-     */
-
-            LinkButton btn = (LinkButton)sender;
-            bool f = false;
+            Button btn = (Button)sender;
             string orderID = "";
             string price = "";
+            string uuser="";
+            int pID = Convert.ToInt32(btn.CommandArgument);
+            bool f = false;
+
+            con.Open();
+            string sQry = "Select * from Customer where email='" + email + "'";
+
+            /* SqlCommand cmd = new SqlCommand(sQry, con);
+
+             SqlDataAdapter da = new SqlDataAdapter(cmd);
+             DataTable dt = new DataTable();
+             DataSet ds = new DataSet();
+             da.Fill(dt);
+
+             con.Close();
+             ds.Tables.Add(dt);
+             userID = dt.Rows[0]["CusID"].ToString();
+             */
+
+            SqlCommand cmd3 = new SqlCommand(sQry, con);
+            SqlDataReader reader11 = cmd3.ExecuteReader();
+            IDataRecord record1;
+            while (reader11.Read())
+            {
+                record1 = (IDataRecord)reader11;
+                uuser = record1["CusID"].ToString();
+            }
+            con.Close();
+
             //check active or inactive for user's orders 
             //inactive order: order has been paid
             //active order: order did not been paid
@@ -165,17 +193,18 @@ namespace GroupProject
                 Response.Write("<script language=javascript>alert('Please login first!!')</script>");
                 Response.Write("<script language=javascript>window.location.href='login.aspx'; </script>");
             }
+
             else
             {
+                
                 try
                 {
-                    userID = Session["login"].ToString();
-                    query = string.Format("Select * from Orders where CusID ={0}", userID);
-
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    con.Open();
+                    string query = string.Format("Select * from Orders1 where CusID = {0}", uuser);
+                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    SqlDataReader reader = cmd1.ExecuteReader();
                     IDataRecord record;
+
                     while (reader.Read())
                     {
                         record = (IDataRecord)reader;
@@ -184,43 +213,51 @@ namespace GroupProject
                             f = true;
                             orderID = record["OrderID"].ToString();
                         }
-                    }
+                    }       
                 }
-                catch
+                catch(Exception ea)
                 {
-                }
+                    Response.Write(ea.Message);
+                Response.Write("<script language=javascript>alert('error1111! ')</script>");
+            }
                 finally
                 {
-                    cn.Close();
+                    con.Close();
                 }
+                
                 // if customer don't have active order
                 if (f == false)
                 {
 
                     try
                     {
-                        query = string.Format("INSERT INTO Orders ( CusID,OrderState) VALUES ( {0},'active');", userID);
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cn.Open();
+                        string qry = string.Format("INSERT INTO Orders1 (OrderID,CusID,OrderState) VALUES (NEXT VALUE FOR groupProject.SQorderID,{0},'active');", uuser);
+                        SqlCommand cmd = new SqlCommand(qry, con);
+                        con.Open();
                         cmd.ExecuteNonQuery();
                     }
                     catch
                     {
+                        Response.Write("<script language=javascript>alert('error123 ! ')</script>");
                     }
                     finally
                     {
-                        cn.Close();
+                        con.Close();
                     }
 
                 }
-                // find the order id we just created
+
+
+                //find orderID
+
                 try
                 {
-                    query = string.Format("Select * from orders where CusID ={0}", userID);
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    con.Open();
+                    string query = string.Format("Select * from Orders1 where CusID = {0}", uuser);
+                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    SqlDataReader reader = cmd1.ExecuteReader();
                     IDataRecord record;
+
                     while (reader.Read())
                     {
                         record = (IDataRecord)reader;
@@ -233,19 +270,22 @@ namespace GroupProject
                 }
                 catch
                 {
+                    Response.Write("<script language=javascript>alert('error2 ! ')</script>");
                 }
                 finally
                 {
-                    cn.Close();
+                    con.Close();
                 }
 
 
+
                 // find the price of product 
+
                 try
                 {
-                    query = string.Format("Select Retail from product where ProductID ={0}", btn.CommandArgument);
-                    SqlCommand comd1 = new SqlCommand(query, cn);
-                    cn.Open();
+                    string query = string.Format("Select Retail from product where ProductID = {0}",pID);
+                    SqlCommand comd1 = new SqlCommand(query, con);
+                    con.Open();
                     SqlDataReader reader1 = comd1.ExecuteReader();
                     while (reader1.Read())
                     {
@@ -255,30 +295,35 @@ namespace GroupProject
                 }
                 catch
                 {
+                    Response.Write("<script language=javascript>alert('error2 ! ')</script>");
                 }
                 finally
                 {
-                    cn.Close();
+                    con.Close();
                 }
+               
+            // insert data to orderItem
 
-                // insert data to orderItem
-                try
+            try
                 {
-                    query = string.Format("INSERT INTO OrderItem (OrderID,ProductID,Quantity ,PaidEach) VALUES ({0},{1},1,{2});", orderID, btn.CommandArgument, price);
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cn.Open();
+                    //string query = string.Format("Select Retail from product where ProductID = {0}", pID);
+                    string query = string.Format("INSERT INTO ORDERITEM1 (OrderItem1ID,OrderID,ProductID,Quantity ,PaidEach) VALUES (NEXT VALUE FOR groupProject.SQorderItemID,{0},1,1,1);  ", orderID);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
                     cmd.ExecuteNonQuery();
                     ClientScript.RegisterStartupScript(GetType(), "message", "<script>alert('add item to cart success!!');</script>");
 
                 }
                 catch
                 {
+                    Response.Write("<script language=javascript>alert('error3 ! ')</script>");
                 }
                 finally
                 {
-                    cn.Close();
+                    con.Close();
                 }
             }
+
 
 
 

@@ -13,9 +13,17 @@ namespace GroupProject
         {
             if (Session["login"] != null)
             {
-                loginBtn.Visible = false;
-                MyPageBtn.Visible = true;
-                logoutBtn.Visible = true;
+                login.Visible = false;
+                myPage.Visible = true;
+                logout.Visible = true;
+            }
+
+
+            else
+            {
+                login.Visible = true;
+                myPage.Visible =false;
+                logout.Visible = false;
             }
         }
 

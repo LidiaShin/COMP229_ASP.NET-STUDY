@@ -2,7 +2,7 @@
 <asp:Content ID="content1" ContentPlaceHolderID="main" runat="server">
 	<!DOCTYPE html>
 
-        <div class="wrapper">
+ <div class="wrapper">
 			**** SignUp Here ****
 			<hr />
 <table style="width: 100%;">

@@ -90,6 +90,8 @@
     <Content Include="pics\home1.jpg" />
     <Content Include="pics\home2.jpg" />
     <Content Include="pics\home3.jpg" />
+    <Content Include="pics\kids.PNG" />
+    <Content Include="pics\logo.PNG" />
     <Content Include="PImage.PNG" />
     <Content Include="register.aspx" />
     <Content Include="search.aspx" />

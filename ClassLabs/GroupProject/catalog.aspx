@@ -18,12 +18,12 @@ Details
 
 <div class="wrapper_right">
    
-
+<div id="linkCats">
 <asp:LinkButton ID="default" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="All" OnClick="ENameLinkBtn_Click" CommandArgument="default"></asp:LinkButton>  
 <asp:LinkButton ID="stroller" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Stroller" OnClick="ENameLinkBtn_Click" CommandArgument="stroller"></asp:LinkButton>  
 <asp:LinkButton ID="cloth" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Cloth" OnClick="ENameLinkBtn_Click" CommandArgument="cloth"></asp:LinkButton>  
-<asp:LinkButton ID="food" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Food" OnClick="ENameLinkBtn_Click" CommandArgument="food"></asp:LinkButton>  
-
+<asp:LinkButton ID="food" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Toy" OnClick="ENameLinkBtn_Click" CommandArgument="food"></asp:LinkButton>  
+</div>
 
 
 
@@ -88,10 +88,14 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <td><%# Eval("ProductName") %></td>
 <td><%# Eval("Retail") %></td>
 <td><asp:Button ID="Detail" runat="server" Text="See Details" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail" /></td>
-<td><asp:LinkButton ID="AddToCart" runat="server" Text="Add to Cart" Font-Underline="false" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="AddToCart" /></td>
+<td><asp:Button ID="AddToCart" runat="server" Text="Add to Cart" Font-Underline="false" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="AddToCart" /></td>
 </ItemTemplate>
 </asp:ListView>	
 <asp:Label ID="result" runat="server" Text="Label"></asp:Label>
 </div>
 <div style="clear:both; font-size:1px;"></div>
+
+	<asp:Label ID="test1" runat="server" Text="Label"></asp:Label>
+	<asp:Label ID="test2" runat="server" Text="Label"></asp:Label>
+
 </asp:Content>

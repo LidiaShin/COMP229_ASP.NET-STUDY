@@ -19,7 +19,7 @@ namespace GroupProject
 
         public static void checkInfo(Info info)
         {
-            string query = string.Format(@"SET IDENTITY_INSERT Customer ON;Insert into Customer (CusID , FirstName , LastName ,email ,Password) Values (NEXT VALUE FOR Test.CountBy1, '{0}','{1}','{2}','{3}')",
+            string query = string.Format(@"SET IDENTITY_INSERT Customer ON; Insert into Customer (CusID , FirstName , LastName ,email ,Password) Values (NEXT VALUE FOR Test.CountBy1, '{0}','{1}','{2}','{3}')",
             info.firstName, info.lastName,info.eMailAddress,info.passWord);
 
             cmd = new SqlCommand(query, cn);
@@ -61,7 +61,7 @@ namespace GroupProject
 
         public static void seeDetails(Details detail)
         {
-            string query = string.Format(@"select Description,PicURL from Products where productID = ('{0}');", detail.ProductID);
+            string query = string.Format(@"select ProductName,PicURL from Product where productID = ('{0}');", detail.ProductID);
 
             cmd = new SqlCommand(query, cn);
 
@@ -74,8 +74,8 @@ namespace GroupProject
                 DataSet ds = new DataSet();
                 da.Fill(dt);
                 ds.Tables.Add(dt);
-                detail.Description = dt.Rows[0]["Description"].ToString();
-                detail.pictureURL = dt.Rows[0]["PicURL"].ToString();
+                detail.Description = dt.Rows[0]["ProductName"].ToString();
+                detail.pictureURL = dt.Rows[0]["PicUrl"].ToString();
             }
             finally
             {
