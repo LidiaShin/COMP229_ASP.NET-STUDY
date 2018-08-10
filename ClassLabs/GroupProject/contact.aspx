@@ -3,13 +3,42 @@
 <!DOCTYPE html>
 
 <div class="wrapper_left">
-**** Contact Info Here ****
-<hr />
+
+<div class="contactHeading"> - Contact - 
+</div><br />
+
+<div id="searchBox">
+Store Hours<br />
+Monday - Friday: 10AM-6PM<br />
+Saturday: 10AM-6PM<br />
+Sunday: 12PM-5PM<br />
+
+Locations<br />
+
+674 Queen St. West
+(416) 681-0368
+
+
+
+
+	
+
+<br />
 </div>
 
+
+
+
+
+
+</div>
+
+
+
+
 <div class="wrapper_right">
-**** Contact window Here ****
-<hr />
+<div class="contactHeading"> Contact Us
+</div><br />
 <table style="width: 100%;">
 <tr>
 <asp:TextBox ID="uName" runat="server" placeholder="Name" Width="50%"></asp:TextBox>
@@ -26,7 +55,7 @@
 </tr>
           
 </table>
-
+<asp:Button ID="Button1" runat="server" Text="Send" BorderStyle="None" CssClass="contactBtn" />
 
 
 

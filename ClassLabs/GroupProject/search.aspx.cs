@@ -29,11 +29,11 @@ namespace GroupProject
 
                 if (genderSelected == "Boy")
                 {
-                    query = "Select ProductID, ProductName, Retail, PicUrl from Product where MinAge >='" + minAgeSelected + "' and ForGender !='Girls'";
+                    query = "Select TOP 3 ProductID, ProductName, Retail, PicUrl from Product where MinAge >='" + minAgeSelected + "' and ForGender !='Girls'";
                 }
                 else
                 {
-                    query = "Select ProductID, ProductName, Retail, PicUrl from Product where MinAge >='" + minAgeSelected + "' and ForGender !='Boys'";
+                    query = "Select TOP 3 ProductID, ProductName, Retail, PicUrl from Product where MinAge >='" + minAgeSelected + "' and ForGender !='Boys'";
                 }
 
                 SqlCommand cmd = new SqlCommand(query, cn);
@@ -57,6 +57,7 @@ namespace GroupProject
             {
                 record = (IDataRecord)reader;
                 PlaceHolder PH1 = new PlaceHolder();
+
                 Image prodcutImage1 = new Image();
                 prodcutImage1.ImageUrl = record["PicUrl"].ToString();
                 prodcutImage1.Height = 200;
@@ -87,6 +88,7 @@ namespace GroupProject
                 newline4.Text = "<br/>";
                 PlaceHolder1.Controls.Add(row);
                 PlaceHolder1.Controls.Add(PH1);
+
                 PH1.Controls.Add(prodcutImage1);
                 PH1.Controls.Add(newline2);
                 PH1.Controls.Add(forName);

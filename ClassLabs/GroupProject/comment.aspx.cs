@@ -17,46 +17,62 @@ namespace GroupProject
         string connStr = ConfigurationManager.ConnectionStrings["ConnectionString2"].ConnectionString;
 
         string uName { get; set; }
+        string uID { get; set; }
         string itemName { get; set; }
         string itemComment { get; set; }
 
+        string email { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack && Session["username"] != null)
+            if (!IsPostBack && Session["login"] != null)
             {
                 try
                 {
-                    commentView();
+                    //commentView();
+                    email = Session["login"].ToString();
 
-                    usernamelbl.Text = Session["UserName"].ToString();
+             
 
-
-
-                    
                     SqlConnection con = new SqlConnection(connStr);
                     con.Open();
 
-                    SqlCommand com = new SqlCommand("select * from employee", con); // table name 
-                    SqlDataAdapter da = new SqlDataAdapter(com);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);  // fill dataset
-                    itemList.DataTextField = ds.Tables[0].Columns["FirstName"].ToString(); // text field name of table dispalyed in dropdown
-                    itemList.DataValueField = ds.Tables[0].Columns["id"].ToString();             // to retrive specific  textfield name 
-                    itemList.DataSource = ds.Tables[0];      //assigning datasource to the dropdownlist
-                    itemList.DataBind();  //binding dropdownlist
+                    string sQry = "select * from dbo.Customer where email='" + email + "'";          
+                    SqlCommand cmd = new SqlCommand(sQry, con);
 
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                    DataTable dt1 = new DataTable();
+                    DataSet ds1 = new DataSet();
+                    da1.Fill(dt1);
+                    //con.Close();
+                    ds1.Tables.Add(dt1);
 
+                    uName = dt1.Rows[0]["FirstName"].ToString();
+                    uID = dt1.Rows[0]["CusID"].ToString();
 
+                    usernamelbl.Text = uName;
 
+                    string tQry = "select ProductName from dbo.Product where ProductID in(select ProductID from ORDERITEM1 join orders1 on (ORDERITEM1.OrderID=Orders1.OrderID) where Orders1.OrderState='inactive' And Orders1.CusID=" + uID + ")";
+                    SqlCommand cme = new SqlCommand(tQry, con);
 
+                    SqlDataAdapter da2 = new SqlDataAdapter(cme);
+                    DataTable dt2 = new DataTable();
+                    DataSet ds2 = new DataSet();
+                    da2.Fill(dt2);
+                    con.Close();
+                    ds2.Tables.Add(dt2);
 
-                    usernametxt.Visible = false;
-                    
+                    itemList.DataTextField = ds2.Tables[0].Columns["ProductName"].ToString();
+                    itemList.DataValueField = ds2.Tables[0].Columns["ProductName"].ToString();
+                    itemList.DataSource = ds2.Tables[0];
+                    itemList.DataBind();
+
+                    commentView();
+                    nonLoginMsg.Visible = false;
                 }
                 catch
                 {
-                    result2.Text = "Failed!";
+                    test.Text = "get username failed!";
                 }
             }
 
@@ -66,15 +82,16 @@ namespace GroupProject
                 try
                 {
                     commentView();
-
                     usernamelbl.Visible = false;
-                    usernametxt.Visible = true;
-                    
+                    itemList.Visible = false;
+                    commenttxt.Visible = false;
+                    writeBtn.Visible = false;
+                    nonLoginMsg.Visible = true;
                 }
 
                 catch
                 {
-                    result2.Text = "Failed!";
+                    test.Text = "nonlogin";
                 }            
             }
           }
@@ -84,7 +101,7 @@ namespace GroupProject
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sQry = "select * from dbo.Comment";
+            string sQry = "select FName,PName,PCmt from dbo.Comment";
             SqlCommand cmd = new SqlCommand(sQry, con);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -128,21 +145,10 @@ namespace GroupProject
         {
             try
             {
-                
+                uName = usernamelbl.Text;
+                itemName = itemList.SelectedItem.Text;
                 itemComment = commenttxt.Text;
-
-                if (Session["username"] != null)
-                {
-                    uName = usernamelbl.Text;
-                    itemName = itemList.SelectedItem.Text;
-                }
-                else
-                {
-                    uName = usernametxt.Text;
-                    itemName = itemList.SelectedItem.Text;
-                }
-
-
+  
                 Comment writeComment = new Comment(uName, itemName, itemComment);
                 ConnectClass.writeComment(writeComment);
                 //string msg = "Register Successfully!";
@@ -158,7 +164,7 @@ namespace GroupProject
 
                 SqlConnection con = new SqlConnection(connStr);
                 con.Open();
-                string sQry = "select * from dbo.Comment";
+                string sQry = "select FName,PName,PCmt from dbo.Comment";
                 SqlCommand cmd = new SqlCommand(sQry, con);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -170,12 +176,16 @@ namespace GroupProject
                 DisplayComment.DataSource = ds.Tables[0];
                 DisplayComment.DataBind();
 
+                commenttxt.Text = "";
+
 
             }
             catch
             {
-                result1.Text = "Register Failed!";
+                result1.Text = "writing Failed!";
             }
+
+            
         }
 
 

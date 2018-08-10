@@ -22,15 +22,6 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.Label usernamelbl;
         
         /// <summary>
-        /// usernametxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernametxt;
-        
-        /// <summary>
         /// itemList control.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.TextBox commenttxt;
         
         /// <summary>
-        /// write control.
+        /// writeBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button write;
+        protected global::System.Web.UI.WebControls.Button writeBtn;
         
         /// <summary>
         /// result1 control.
@@ -65,6 +56,15 @@ namespace GroupProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label result1;
+        
+        /// <summary>
+        /// nonLoginMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nonLoginMsg;
         
         /// <summary>
         /// hdnText control.
@@ -85,12 +85,12 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.ListView DisplayComment;
         
         /// <summary>
-        /// result2 control.
+        /// test control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label result2;
+        protected global::System.Web.UI.WebControls.Label test;
     }
 }

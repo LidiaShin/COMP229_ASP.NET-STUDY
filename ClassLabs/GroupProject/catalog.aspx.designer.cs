@@ -31,6 +31,15 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.Label detailView;
         
         /// <summary>
+        /// ListView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListView1;
+        
+        /// <summary>
         /// default control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace GroupProject {
         protected global::System.Web.UI.WebControls.LinkButton cloth;
         
         /// <summary>
-        /// food control.
+        /// toy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton food;
+        protected global::System.Web.UI.WebControls.LinkButton toy;
         
         /// <summary>
         /// hdnText control.
@@ -74,24 +83,6 @@ namespace GroupProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdnText;
-        
-        /// <summary>
-        /// ListView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
-        
-        /// <summary>
-        /// result control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label result;
         
         /// <summary>
         /// test1 control.

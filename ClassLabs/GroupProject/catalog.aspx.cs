@@ -65,7 +65,7 @@ namespace GroupProject
                 sGroup = "2";
             else if (sGroup == "cloth")
                 sGroup = "3";
-            else if (sGroup == "food")
+            else if (sGroup == "toys")
                 sGroup = "4";
             else
                 sGroup = "";
@@ -307,7 +307,7 @@ namespace GroupProject
             try
                 {
                     //string query = string.Format("Select Retail from product where ProductID = {0}", pID);
-                    string query = string.Format("INSERT INTO ORDERITEM1 (OrderItem1ID,OrderID,ProductID,Quantity ,PaidEach) VALUES (NEXT VALUE FOR groupProject.SQorderItemID,{0},1,1,1);  ", orderID);
+                    string query = string.Format("INSERT INTO ORDERITEM1 (OrderItem1ID,OrderID,ProductID,Quantity ,PaidEach) VALUES (NEXT VALUE FOR groupProject.SQorderItemID,{0},{1},1,{2});  ", orderID,pID,price);
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
                     cmd.ExecuteNonQuery();

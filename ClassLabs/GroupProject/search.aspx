@@ -4,7 +4,10 @@
 
 <div class="wrapper_left">
    
-<h5 class="form-signin-heading">**** Search Item Here ****</h5><br />
+<div id="searchHeading"> Search Item Here 
+</div><br />
+
+<div id="searchBox">
 Age(Year)
 <asp:DropDownList ID="ddlAge" runat="server">
                 <asp:ListItem Value="0">0-2</asp:ListItem>
@@ -17,9 +20,12 @@ Gender
                 <asp:ListItem>Boy</asp:ListItem>
                 <asp:ListItem>Girl</asp:ListItem>
 </asp:DropDownList>
-        
-<asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="button" OnClick="btnSearch_Click" />
+<br />    
+	
+<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" BorderStyle="None" CssClass="searchBtn" />
 <br />
+</div>
+
 </div>
 
 
@@ -30,7 +36,8 @@ Gender
 </div>
        
 
-	
+	
+
 
 
 </asp:Content>

@@ -1,79 +1,57 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeBehind="catalog.aspx.cs" Inherits="GroupProject.catalog" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeBehind="catalog.aspx.cs" Inherits="GroupProject.catalog" Theme="KidsTheme" %>
 <asp:Content ID="content1" ContentPlaceHolderID="main" runat="server">
 	<!DOCTYPE html>
 	
 <div class="wrapper_left">
-Details
+
 
 
 <div class="wrapper_inside_picture">
-<asp:Image ID="productPic" runat="server" Height="80px" Width="80px" BorderStyle="None"  Style="border:0px;" />
+
+<asp:Image ID="productPic" runat="server" BorderStyle="None" CssClass="itemPicture" Width="240px" Height="240px" />
 </div>
 
 <div class="wrapper_inside_detail">
-<asp:Label ID="detailView" runat="server" Text="Label"></asp:Label>
+<asp:Label ID="detailView" runat="server" Text=""></asp:Label>
 </div>
 
 </div>
 
-<div class="wrapper_right">
+<div class="wrapper_right" style="background-color:white;">
    
-<div id="linkCats">
-<asp:LinkButton ID="default" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="All" OnClick="ENameLinkBtn_Click" CommandArgument="default"></asp:LinkButton>  
-<asp:LinkButton ID="stroller" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Stroller" OnClick="ENameLinkBtn_Click" CommandArgument="stroller"></asp:LinkButton>  
-<asp:LinkButton ID="cloth" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Cloth" OnClick="ENameLinkBtn_Click" CommandArgument="cloth"></asp:LinkButton>  
-<asp:LinkButton ID="food" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="Toy" OnClick="ENameLinkBtn_Click" CommandArgument="food"></asp:LinkButton>  
-</div>
-
-
-
-<asp:HiddenField ID="hdnText" runat="server" ClientIDMode="Static" Value="" /> 
-
 
 <asp:ListView ID="ListView1" runat="server" GroupPlaceholderID="groupPlaceHolder1"
 ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
 <LayoutTemplate>
+	
 
+<div id="itemTable">
+<table style="margin:auto;">
 
+<tr id="itemListGroup">
+<th style="width:400px">Item</th>
+<th style="width:70px">Price</th>
+<th style="width:70px">Detail</th>
+<th style="width:20px">Cart </th>
+</tr>
 
-
-    <table cellpadding="0" cellspacing="0">
-        <tr>
-            <th style="width:100px;">
-                Name
-            </th>
-
-            <th style="width:100px;">
-                Price
-            </th>
-
-			<th style="width:100px;">
-                Detail
-            </th>
-
-			 <th style="width:100px;">
-                Shopping
-            </th>
-
-			 
-           
-        </tr>
+	
 <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
 
-<tr>
-<td colspan = "5">
-<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="5">
+<tr><td colspan = "5" style="background-color:#fcf2f6">
+<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="8">
+	
 <Fields>
 <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
                             ShowNextPageButton="false" />
 <asp:NumericPagerField ButtonType="Link" />
 <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" />
 </Fields>
-</asp:DataPager>
 
-</td>
-</tr>
+</asp:DataPager>
+</td></tr>
 </table>
+</div>
 </LayoutTemplate>
 
 
@@ -85,17 +63,25 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 </GroupTemplate>
 
 <ItemTemplate>
-<td><%# Eval("ProductName") %></td>
+<td style="text-align:left;"><%# Eval("ProductName") %></td>
 <td><%# Eval("Retail") %></td>
-<td><asp:Button ID="Detail" runat="server" Text="See Details" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail" /></td>
-<td><asp:Button ID="AddToCart" runat="server" Text="Add to Cart" Font-Underline="false" CssClass="button" CommandArgument='<%# Eval("ProductID") %>' OnClick ="AddToCart" /></td>
+<td><asp:Button ID="Detail" runat="server" Text="SEE" CssClass="itemDetailBtn" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail"  BorderStyle="None" /></td>
+<td><asp:Button ID="AddToCart" runat="server" Text="ADD" Font-Underline="false" CssClass="itemAddBtn" CommandArgument='<%# Eval("ProductID") %>' BorderStyle="None" OnClick ="AddToCart" /></td>
 </ItemTemplate>
 </asp:ListView>	
-<asp:Label ID="result" runat="server" Text="Label"></asp:Label>
+<br /><br />
+<div id="linkCats">
+Tag : <asp:LinkButton ID="default" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="All" OnClick="ENameLinkBtn_Click" CommandArgument="Default"></asp:LinkButton>  
+<asp:LinkButton ID="stroller" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="toys" OnClick="ENameLinkBtn_Click" CommandArgument="toy"></asp:LinkButton>  
+<asp:LinkButton ID="cloth" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="cloth" OnClick="ENameLinkBtn_Click" CommandArgument="cloth"></asp:LinkButton>  
+<asp:LinkButton ID="toy" CssClass="linkCat" runat="server" ClientIDMode="Static" Text="stroller" OnClick="ENameLinkBtn_Click" CommandArgument="stroller"></asp:LinkButton>  
+<asp:HiddenField ID="hdnText" runat="server" ClientIDMode="Static" Value="" /> 
+</div>
+
 </div>
 <div style="clear:both; font-size:1px;"></div>
 
-	<asp:Label ID="test1" runat="server" Text="Label"></asp:Label>
-	<asp:Label ID="test2" runat="server" Text="Label"></asp:Label>
+	<asp:Label ID="test1" runat="server" Text=""></asp:Label>
+	<asp:Label ID="test2" runat="server" Text=""></asp:Label>
 
 </asp:Content>

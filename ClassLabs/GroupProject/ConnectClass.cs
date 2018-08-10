@@ -61,7 +61,7 @@ namespace GroupProject
 
         public static void seeDetails(Details detail)
         {
-            string query = string.Format(@"select ProductName,PicURL from Product where productID = ('{0}');", detail.ProductID);
+            string query = string.Format(@"select * from Product where productID = ('{0}');", detail.ProductID);
 
             cmd = new SqlCommand(query, cn);
 
@@ -74,7 +74,7 @@ namespace GroupProject
                 DataSet ds = new DataSet();
                 da.Fill(dt);
                 ds.Tables.Add(dt);
-                detail.Description = dt.Rows[0]["ProductName"].ToString();
+                detail.Description = dt.Rows[0]["Description"].ToString();
                 detail.pictureURL = dt.Rows[0]["PicUrl"].ToString();
             }
             finally
@@ -85,8 +85,8 @@ namespace GroupProject
 
         public static void writeComment(Comment comment)
         {
-            string query = string.Format(@"Insert into Comment Values ('{0}', '{1}','{2}')", 
-                comment.userName, comment.itemName, comment.itemComment);
+
+            string query = string.Format(@"Insert into Comment(FName, PName,PCmt,ICmt) Values ('{0}','{1}','{2}',NEXT VALUE FOR groupProject.SQcommentID);", comment.userName, comment.itemName, comment.itemComment);
 
             cmd = new SqlCommand(query, cn);
             try

@@ -90,6 +90,7 @@
     <Content Include="pics\home1.jpg" />
     <Content Include="pics\home2.jpg" />
     <Content Include="pics\home3.jpg" />
+    <Content Include="pics\home4.PNG" />
     <Content Include="pics\kids.PNG" />
     <Content Include="pics\logo.PNG" />
     <Content Include="PImage.PNG" />
@@ -182,7 +183,7 @@
     <Content Include="js\bootstrap.bundle.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
-    <Content Include="App_Themes\kidsThme\Skin1.skin" />
+    <Content Include="App_Themes\KidsTheme\Skin1.skin" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

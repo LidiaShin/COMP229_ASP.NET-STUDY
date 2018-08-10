@@ -110,7 +110,7 @@ namespace GroupProject
             //check active or inactive for user's orders 
             //inactive order: order has been paid
             //active order: order did not been paid
-            Label1.Text = "your cart is empty";
+            cartEmpty.Text = "your cart is empty";
 
 
 
@@ -131,7 +131,7 @@ namespace GroupProject
                     if (record["OrderState"].ToString() == "active")
                     {
                         this.orderID = record["OrderID"].ToString();
-                        Label1.Text = "";
+                        cartEmpty.Text = "";
                         Pay.Visible = true;
                         ShoppingBTon.Visible = false;
                     }
@@ -221,7 +221,7 @@ namespace GroupProject
                 newline4.Text = "<br/>";
                 Label newline5 = new Label();
                 newline5.Text = "<br/>";
-                PlaceHolder3.Controls.Add(PH1);
+                //PlaceHolder3.Controls.Add(PH1);
                 PH1.Controls.Add(no);
                 PH1.Controls.Add(newline2);
                 PH1.Controls.Add(forGender);
@@ -313,6 +313,7 @@ namespace GroupProject
                 myButton.Text = "Delete";
                 myButton.ID = record["OrderItem1ID"].ToString();
                 myButton.Click += new EventHandler(Delete_Click);
+                myButton.CssClass = "deleteBtn";
                 Label newline = new Label();
                 newline.Text = "<br/>";
                 Label newline2 = new Label();

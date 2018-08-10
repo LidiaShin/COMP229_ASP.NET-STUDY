@@ -36,9 +36,10 @@
  </div>
 </div>
 
-
-
+<div class="wrapper_home_right">
+	<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/pics/home4.PNG" Width="500px" Height="300px" PostBackUrl="~/catalog.aspx" />
 	
+	</div>
 
 
 

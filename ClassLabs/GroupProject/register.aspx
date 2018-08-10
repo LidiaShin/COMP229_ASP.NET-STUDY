@@ -2,10 +2,12 @@
 <asp:Content ID="content1" ContentPlaceHolderID="main" runat="server">
 	<!DOCTYPE html>
 
- <div class="wrapper">
-			**** SignUp Here ****
-			<hr />
-<table style="width: 100%;">
+<div class="wrapper">
+<div id="signupHeading"> - SignUp Here - 
+</div><br />
+
+<div id="signupBox">
+<table style="width: 80%;">
 
 <tr>
 <td>First Name:</td>
@@ -13,7 +15,7 @@
 </tr>
 	
 <tr>
-<td>Last Name </td>
+<td>Last Name: </td>
 <td><asp:TextBox ID="lName" runat="server"></asp:TextBox> </td>
 </tr>
 
@@ -30,9 +32,9 @@
            
           
         </table>
-			<asp:Button ID="check" runat="server" Text="Register" OnClick="check_Click" /> <br /><br />
+			<asp:Button ID="check" runat="server" Text="SignUp" OnClick="check_Click" CssClass="signupBtn" BorderStyle="None" /> <br /><br />
 			<asp:Label ID="result" runat="server" Text=""></asp:Label>
-
+</div>
 			
 
         </div>
