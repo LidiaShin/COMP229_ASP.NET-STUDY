@@ -100,6 +100,7 @@
     <Content Include="win.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Average.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="catalog.aspx.cs">
       <DependentUpon>catalog.aspx</DependentUpon>
@@ -125,6 +126,7 @@
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Details.cs" />
+    <Compile Include="EmailCheck.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

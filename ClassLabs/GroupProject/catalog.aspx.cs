@@ -357,6 +357,33 @@ namespace GroupProject
         }
 
 
+        string pName { get; set; }
+
+        protected void SeeAVG(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Label AVG = (Label)(sender);
+                pName = AVG.Text;
+               
+
+
+                Details SeeDetails = new Details(pID, desc, picURL);
+                ConnectClass.seeDetails(SeeDetails);
+                detailView.Text = SeeDetails.Description;
+                productPic.ImageUrl = SeeDetails.pictureURL;
+
+
+            }
+            catch
+            {
+                detailView.Text = "Failed!";
+            }
+        }
+
+
+
 
     }
 }

@@ -20,6 +20,7 @@ namespace GroupProject
         string uID { get; set; }
         string itemName { get; set; }
         string itemComment { get; set; }
+        int itemGrade { get; set; }
 
         string email { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -27,6 +28,18 @@ namespace GroupProject
 
             if (!IsPostBack && Session["login"] != null)
             {
+               
+                    List<string> gradelist = new List<string>();
+                    gradelist.Add("1");
+                    gradelist.Add("2");
+                    gradelist.Add("3");
+                    gradelist.Add("4");
+                    gradelist.Add("5");
+                    grade.DataSource = gradelist;
+                    grade.DataBind();
+                    grade.Visible = true;
+                    nonLoginMsg.Visible = false;
+
                 try
                 {
                     //commentView();
@@ -52,7 +65,7 @@ namespace GroupProject
 
                     usernamelbl.Text = uName;
 
-                    string tQry = "select ProductName from dbo.Product where ProductID in(select ProductID from ORDERITEM1 join orders1 on (ORDERITEM1.OrderID=Orders1.OrderID) where Orders1.OrderState='inactive' And Orders1.CusID=" + uID + ")";
+                    string tQry = "select ProductName,ProductID from dbo.Product where ProductID in(select ProductID from ORDERITEM1 join orders1 on (ORDERITEM1.OrderID=Orders1.OrderID) where Orders1.OrderState='inactive' And Orders1.CusID=" + uID + ")";
                     SqlCommand cme = new SqlCommand(tQry, con);
 
                     SqlDataAdapter da2 = new SqlDataAdapter(cme);
@@ -68,7 +81,8 @@ namespace GroupProject
                     itemList.DataBind();
 
                     commentView();
-                    nonLoginMsg.Visible = false;
+
+
                 }
                 catch
                 {
@@ -77,7 +91,7 @@ namespace GroupProject
             }
 
 
-            else if (!IsPostBack && Session["username"] == null)
+            else if (!IsPostBack && Session["login"] == null)
             {
                 try
                 {
@@ -86,6 +100,7 @@ namespace GroupProject
                     itemList.Visible = false;
                     commenttxt.Visible = false;
                     writeBtn.Visible = false;
+                    grade.Visible = false;
                     nonLoginMsg.Visible = true;
                 }
 
@@ -101,7 +116,7 @@ namespace GroupProject
         {
             SqlConnection con = new SqlConnection(connStr);
             con.Open();
-            string sQry = "select FName,PName,PCmt from dbo.Comment";
+            string sQry = "select FName,PName,PCmt,grade from dbo.Comment";
             SqlCommand cmd = new SqlCommand(sQry, con);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -114,25 +129,23 @@ namespace GroupProject
             DisplayComment.DataSource = ds.Tables[0];
             DisplayComment.DataBind();
   
-            //DisplayComment.DataSource = ds.Tables[0];
-            //DisplayComment.DataBind();
         }
         protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             (DisplayComment.FindControl("DataPager1") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
 
-            //if (hdnText.Value != "")
-            //{
-            //    string yourValue = hdnText.Value.ToString();
-            //    if (yourValue == "Default")
-            //    {
-            //        commentView("");
-            //    }
-            //    else
-            //    {
-            //        this.commentView(yourValue);
-            //    }
-            //}
+            if (hdnText.Value != "")
+            {
+                string yourValue = hdnText.Value.ToString();
+                if (yourValue == "Default")
+                {
+                    commentView();
+                }
+                else
+                {
+                    this.commentView();
+                }
+            }
             //else
             //{
                 this.commentView();
@@ -148,8 +161,11 @@ namespace GroupProject
                 uName = usernamelbl.Text;
                 itemName = itemList.SelectedItem.Text;
                 itemComment = commenttxt.Text;
-  
-                Comment writeComment = new Comment(uName, itemName, itemComment);
+
+                itemGrade = Convert.ToInt32(grade.SelectedItem.Text);
+
+
+                Comment writeComment = new Comment(uName, itemName, itemComment,itemGrade);
                 ConnectClass.writeComment(writeComment);
                 //string msg = "Register Successfully!";
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SomeKey", "alert('Some alert')", true);
@@ -161,10 +177,10 @@ namespace GroupProject
                 
                 Response.Write("</script>");
 
-
-                SqlConnection con = new SqlConnection(connStr);
+                commentView();
+                /*SqlConnection con = new SqlConnection(connStr);
                 con.Open();
-                string sQry = "select FName,PName,PCmt from dbo.Comment";
+                string sQry = "select FName,PName,PCmt,grade from dbo.Comment";
                 SqlCommand cmd = new SqlCommand(sQry, con);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -174,9 +190,9 @@ namespace GroupProject
                 con.Close();
                 ds.Tables.Add(dt);
                 DisplayComment.DataSource = ds.Tables[0];
-                DisplayComment.DataBind();
+                DisplayComment.DataBind();*/
 
-                commenttxt.Text = "";
+                
 
 
             }

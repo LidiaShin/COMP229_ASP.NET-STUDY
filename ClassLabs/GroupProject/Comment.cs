@@ -11,13 +11,14 @@ namespace GroupProject
         public string itemName { get; set; }
         public string itemComment { get; set; }
 
-        
+        public int itemGrade { get; set; }
        
-        public Comment (string uName, string iName, string iComment)
+        public Comment (string uName, string iName, string iComment,int igrade)
         {
             userName = uName;
             itemName = iName;
             itemComment = iComment;
+            itemGrade = igrade;
         }
     }
 }

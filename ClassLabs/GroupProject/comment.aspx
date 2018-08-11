@@ -8,8 +8,12 @@
 <div id="commentArea">
 <asp:Label ID="usernamelbl"  runat="server" Text=""></asp:Label>&nbsp;&nbsp;
 <asp:DropDownList ID="itemList" runat="server" Width="100px"> </asp:DropDownList>
-<asp:TextBox ID="commenttxt" size="120"  runat="server"></asp:TextBox>&nbsp;
-&nbsp;&nbsp;<asp:Button ID="writeBtn" Text="write" runat="server" OnClick="Write"/>
+<asp:TextBox ID="commenttxt" Width="700px"  runat="server"></asp:TextBox>
+
+<asp:DropDownList ID="grade" Width="100px" runat="server" BackColor="#FFFFCC"></asp:DropDownList>
+&nbsp;&nbsp;
+
+<asp:Button ID="writeBtn" Text="write" runat="server" OnClick="Write"/>
 &nbsp;
 <asp:Label ID="result1" runat="server" Text=""></asp:Label>
 <asp:Label ID="nonLoginMsg" runat="server" Text="Please log in to write feedback"></asp:Label>
@@ -29,9 +33,10 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <table id="commentTable">
 
 <tr id="commentListGroup">
-<th style="width:40px;">Name</th>
-<th style="width:40px;">Item</th>
+<th style="width:50px;">Name</th>
+<th style="width:50px;">Item</th>
 <th style="width:400px;">Comment</th>
+<th style="width:100px;">Grade</th>
 </tr>
 
 <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
@@ -63,6 +68,7 @@ ShowNextPageButton="false" />
 <td><%# Eval("FName") %></td>
 <td style="text-align:left;"><%# Eval("PName") %></td>
 <td style="text-align:left;"><%# Eval("PCmt") %></td>
+<td style="text-align:center;"><%# Eval("grade") %></td>
 </ItemTemplate>
 </asp:ListView>	
 

@@ -27,7 +27,7 @@
 			
 <tr>
 <td>Password </td>
-<td><asp:TextBox ID="pWord" runat="server"></asp:TextBox> </td>
+<td><asp:TextBox ID="pWord" runat="server" TextMode="Password"></asp:TextBox> </td>
 </tr>
            
           

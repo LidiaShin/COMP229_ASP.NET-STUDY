@@ -17,49 +17,28 @@ Locations<br />
 
 674 Queen St. West
 (416) 681-0368
-
-
-
-
-	
-
 <br />
 </div>
-
-
-
-
-
-
 </div>
-
-
-
 
 <div class="wrapper_right">
 <div class="contactHeading"> Contact Us
 </div><br />
-<table style="width: 100%;">
-<tr>
-<asp:TextBox ID="uName" runat="server" placeholder="Name" Width="50%"></asp:TextBox>
-<asp:TextBox ID="eMail" runat="server" placeholder="Email" Width="50%"></asp:TextBox>
-</tr>
-
-<tr>
-<td><asp:TextBox ID="subject" runat="server" placeholder="Subject" Width="100%"></asp:TextBox></td>
-</tr>
 
 
-<tr>
-<td><asp:TextBox ID="content" runat="server" placeholder="Special inquiry or request" Width="100%" Height="100px"></asp:TextBox> </td>
-</tr>
-          
-</table>
-<asp:Button ID="Button1" runat="server" Text="Send" BorderStyle="None" CssClass="contactBtn" />
+<asp:TextBox ID="emailAddress" runat="server" placeholder="email (gmail)" Width="55%"></asp:TextBox>
+<asp:TextBox ID="emailPassword" runat="server" TextMode = "Password" placeholder="gmail password" Width="35%" ></asp:TextBox>
+<br /><br />
 
 
+<asp:TextBox ID="emailSubject" runat="server" placeholder="subject" Width="100%"></asp:TextBox>
+	
+<br /><br />
+<asp:TextBox ID="emailContent" runat="server" placeholder="content" Width="100%" TextMode = "MultiLine"></asp:TextBox>
+<br /><br />
+<asp:FileUpload ID="fileAttach" runat="server" />
+<asp:Button Text="Send" OnClick="SendEmail" runat="server" CssClass="contactBtn" />
 
 </div>
-
 <div style="clear:both; font-size:1px;"></div>
 </asp:Content>

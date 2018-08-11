@@ -33,6 +33,7 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <th style="width:70px">Price</th>
 <th style="width:70px">Detail</th>
 <th style="width:20px">Cart </th>
+<th style="width:20px">Grade </th>
 </tr>
 
 	
@@ -67,6 +68,8 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <td><%# Eval("Retail") %></td>
 <td><asp:Button ID="Detail" runat="server" Text="SEE" CssClass="itemDetailBtn" CommandArgument='<%# Eval("ProductID") %>' OnClick ="SeeDetail"  BorderStyle="None" /></td>
 <td><asp:Button ID="AddToCart" runat="server" Text="ADD" Font-Underline="false" CssClass="itemAddBtn" CommandArgument='<%# Eval("ProductID") %>' BorderStyle="None" OnClick ="AddToCart" /></td>
+<td> <asp:Label ID="AVG" runat="server" CommandArgument='<%# Eval("ProductName") %>'></asp:Label></td>
+
 </ItemTemplate>
 </asp:ListView>	
 <br /><br />

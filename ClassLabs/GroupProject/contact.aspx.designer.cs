@@ -13,48 +13,48 @@ namespace GroupProject {
     public partial class contact {
         
         /// <summary>
-        /// uName control.
+        /// emailAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uName;
+        protected global::System.Web.UI.WebControls.TextBox emailAddress;
         
         /// <summary>
-        /// eMail control.
+        /// emailPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox eMail;
+        protected global::System.Web.UI.WebControls.TextBox emailPassword;
         
         /// <summary>
-        /// subject control.
+        /// emailSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox subject;
+        protected global::System.Web.UI.WebControls.TextBox emailSubject;
         
         /// <summary>
-        /// content control.
+        /// emailContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox content;
+        protected global::System.Web.UI.WebControls.TextBox emailContent;
         
         /// <summary>
-        /// Button1 control.
+        /// fileAttach control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.FileUpload fileAttach;
     }
 }

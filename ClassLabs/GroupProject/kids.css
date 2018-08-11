@@ -34,7 +34,7 @@ li a {
 
 li {
 	display: inline;
-	margin: 0px 16px 0px 16px;
+	margin:0px 16px 0px 16px;
 }
 
 hover {
@@ -463,8 +463,8 @@ li a:hover {
 	border: 1px solid pink;
 	border-radius: 2px;
 	margin-top: 10px;
-
-    padding-left:40px;
+	padding-left:10px;
+    
 }
 
 
@@ -495,6 +495,7 @@ li a:hover {
 	position: relative;
 	float: left;
 	
+	
 }
 
 
@@ -506,10 +507,12 @@ li a:hover {
 }
 
 .homeImages {
-	display: table-cell;
-	width:300px;
-	height:300px;
-	margin:auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 300px;
+	
 }
 
 
