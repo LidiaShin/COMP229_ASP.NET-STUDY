@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="finalMaster.master.cs" Inherits="finaltermReview.finalMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>final Review</title>
+ 
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dosis|Love+Ya+Like+A+Sister|Varela+Round|Julius+Sans+One" rel="stylesheet">
+<link href="kids.css" rel="stylesheet" type="text/css" />
+<script src="js/kidsJS.js"></script>
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+<div id="header">  
+	 FINAL REVIEW 
+</div>  
+
+  <ul>  
+        <li runat="server" id="signupmenu"><a href="signupPr.aspx">SignUp</a></li>  
+        <li><a href="links.aspx">link</a></li>  
+        <li><a href="image.aspx">image</a></li>  
+		
+	</ul>  
+
+<div id="loginArea" runat="server"> 
+<asp:Button ID="login" runat="server" Text="login" PostBackUrl="~/loginPr.aspx" CssClass="btn" />
+<asp:Button ID="logout" runat="server" Text="logout" CssClass="btn" OnClick="logout_Click" />
+<asp:Button ID="myPage" runat="server" Text="mypage" PostBackUrl="~/mypage.aspx" CssClass="btn" />
+</div>
+
+<div id="mainArea">
+	<asp:Image ID="Image1" runat="server" ImageUrl="~/pics/heize2.jpg" />
+<div id="contentArea" >
+<asp:ContentPlaceHolder ID="main" runat="server">  
+</asp:ContentPlaceHolder> 
+</div>		
+
+
+ 
+
+</div>	
+
+<footer id="footer">  
+ⓒ 2018 Centennial ASP.NET finaltest review  &nbsp;&nbsp;&nbsp;&nbsp;
+</footer> 
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -33,7 +33,7 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <th style="width:70px">Price</th>
 <th style="width:70px">Detail</th>
 <th style="width:20px">Cart </th>
-<th style="width:20px">Grade </th>
+<th style="width:20px">Rating(avg) </th>
 </tr>
 
 	

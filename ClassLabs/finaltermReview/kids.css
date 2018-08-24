@@ -78,12 +78,12 @@ li a:hover {
 
 
 #contentArea {
-	width: 90%;
+	width: 500px;
 	height: 420px;
 	padding: 10px;
-	margin:auto;
-	
-	
+	margin-left:250px;
+	float:right;
+	display:inline;
 }
 
 #footer {
@@ -374,9 +374,6 @@ li a:hover {
 #signupBox {
 	text-align:center;
 	padding: 20px;
-
-
-
 	-moz-box-shadow: 0px 1px 2px 2px #23365a;
 	-webkit-box-shadow: 0px 1px 2px 2px #23365a;
 	box-shadow: 0px 1px 1px 1px #23365a;

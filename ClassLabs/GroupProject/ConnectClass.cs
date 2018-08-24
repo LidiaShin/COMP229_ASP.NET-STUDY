@@ -149,6 +149,7 @@ namespace GroupProject
             try
             {
                 cn.Open();
+
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

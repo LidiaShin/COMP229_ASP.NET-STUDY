@@ -73,6 +73,7 @@
     <Content Include="App_Data\week10_review_log.ldf">
       <DependentUpon>week10_review.mdf</DependentUpon>
     </Content>
+    <Content Include="finalQuiz.aspx" />
     <Content Include="profile_wanwan.jpg" />
     <Content Include="profile_wanwan2.jpg" />
     <Content Include="profile_wanwan_angry.jpg" />
@@ -105,6 +106,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionClass.cs" />
+    <Compile Include="finalQuiz.aspx.cs">
+      <DependentUpon>finalQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="finalQuiz.aspx.designer.cs">
+      <DependentUpon>finalQuiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="Qconnect.cs" />
     <Compile Include="Qinfo.cs" />

@@ -36,7 +36,7 @@ ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesC
 <th style="width:50px;">Name</th>
 <th style="width:50px;">Item</th>
 <th style="width:400px;">Comment</th>
-<th style="width:100px;">Grade</th>
+<th style="width:100px;">Rating</th>
 </tr>
 
 <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
